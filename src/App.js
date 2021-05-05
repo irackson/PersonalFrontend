@@ -3,11 +3,10 @@ import { useState, useEffect } from 'react';
 
 function App() {
     const [homeData, setHomeData] = useState(null);
-    // const url =
-    //     process.env.NODE_ENV === 'production'
-    //         ? 'https://api.ianrackson.com/'
-    //         : 'http://localhost:3000/';
-    const url = 'https://api.ianrackson.com/';
+    const url =
+        process.env.NODE_ENV === 'production'
+            ? 'https://api.ianrackson.com/'
+            : 'http://localhost:3001/';
     const getHomeData = async () => {
         const response = await fetch(url);
         const data = await response.json();
@@ -26,6 +25,7 @@ function App() {
             </div>
         );
     } else {
+        console.log(homeData);
         return <div className="App">{JSON.stringify(homeData.blog)}</div>;
     }
 }
