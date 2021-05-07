@@ -1,4 +1,3 @@
-import ThemeApplicator from 'components/user/ThemeApplicator';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -18,16 +17,6 @@ export default function Home(props) {
             <Section>
                 <h3>this is the homepage</h3>
             </Section>
-            <footer>
-                <h4>Pick your Theme</h4>
-
-                <ThemeApplicator></ThemeApplicator>
-                <nav>
-                    <Link to="/settings">
-                        <button>Create / Manage your own Theme</button>
-                    </Link>
-                </nav>
-            </footer>
         </>
     );
 }

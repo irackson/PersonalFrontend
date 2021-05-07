@@ -9,13 +9,6 @@ function Settings(props) {
         <>
             <h2>Customize your Own Theme!</h2>{' '}
             <ThemeCustomizer></ThemeCustomizer>
-            <footer>
-                <nav>
-                    <Link to="/">
-                        <button>Return Home</button>
-                    </Link>
-                </nav>
-            </footer>
         </>
     );
 }

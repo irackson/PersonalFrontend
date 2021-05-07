@@ -1,4 +1,6 @@
 import { StyleContext } from 'components/providers/ThemeProvider';
+import { Link } from 'react-router-dom';
+
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
@@ -13,6 +15,7 @@ const HeaderContainer = styled.header`
     background-color: ${(props) =>
         props.HeaderContainer_props['background-color']};
     padding-top: 10px;
+    height: min-content;
 
     p {
         padding: 0px;
@@ -44,6 +47,15 @@ function Header() {
 
     return (
         <HeaderContainer HeaderContainer_props={HeaderContainer_props}>
+            <nav>
+                <Link to="/">
+                    <button>HOME</button>
+                </Link>
+
+                <Link to="/settings">
+                    <button>THEME</button>
+                </Link>
+            </nav>
             <p>IAN RACKSON WEB DEV</p>
         </HeaderContainer>
     );

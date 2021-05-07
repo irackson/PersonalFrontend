@@ -1,5 +1,7 @@
 import 'App.scss';
 import Header from 'components/layout/Header';
+import Footer from 'components/layout/Footer';
+
 import ThemeProvider from 'components/providers/ThemeProvider';
 import Home from 'pages/Home';
 import Settings from 'pages/Settings';
@@ -24,6 +26,7 @@ export default function App() {
                         <Route render={() => <Redirect to="/" />} />
                     </Switch>
                 </main>
+                <Footer />
             </div>
         </ThemeProvider>
     );
