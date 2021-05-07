@@ -1,33 +1,9 @@
-import './App.css';
-import { useState, useEffect } from 'react';
+import 'App.scss';
+import { createContext, useContext, useReducer } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
-function App() {
-    const [homeData, setHomeData] = useState(null);
-    const url =
-        process.env.NODE_ENV === 'production'
-            ? 'https://api.ianrackson.com/'
-            : 'http://localhost:3001/';
-    const getHomeData = async () => {
-        const response = await fetch(url);
-        const data = await response.json();
-        setHomeData(data);
-    };
-
-    useEffect(() => {
-        getHomeData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    if (!homeData) {
-        return (
-            <div className="App">
-                <h1>loading</h1>
-            </div>
-        );
-    } else {
-        console.log(homeData);
-        return <div className="App">{JSON.stringify(homeData.blog)}</div>;
-    }
+export default function App() {
+    return <div className="App">IAN RACKSON WEB DEV</div>;
 }
 
-export default App;
+// export {  };
