@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { StyleContext } from 'App';
+import { StyleContext } from 'components/providers/ThemeProvider';
 
 function ThemeApplicator(props) {
     const { styles, themes, updateThemeSelection } = useContext(StyleContext);

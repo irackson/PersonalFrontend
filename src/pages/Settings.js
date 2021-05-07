@@ -1,4 +1,4 @@
-import { StyleContext } from 'App';
+import { StyleContext } from 'components/providers/ThemeProvider';
 import ThemeCustomizer from 'components/user/ThemeCustomizer';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';

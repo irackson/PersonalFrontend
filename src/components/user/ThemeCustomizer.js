@@ -1,4 +1,4 @@
-import { StyleContext } from 'App';
+import { StyleContext } from 'components/providers/ThemeProvider';
 
 import { useState, useEffect, useContext, useRef } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';

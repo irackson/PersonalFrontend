@@ -1,4 +1,4 @@
-import { StyleContext } from 'App';
+import { StyleContext } from 'components/providers/ThemeProvider';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
