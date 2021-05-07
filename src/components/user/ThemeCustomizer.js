@@ -6,7 +6,7 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import styled from 'styled-components';
 const { validate } = require('csstree-validator');
 
-const gitPath = 'https://github.com/irackson/frontend/blob/main';
+const gitPath = 'https://github.com/irackson/PersonalFrontend/blob/main';
 const Div = styled.div`
     display: flex;
     justify-content: center;
