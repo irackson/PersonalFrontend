@@ -58,7 +58,6 @@ function ThemeCustomizer(props) {
     const onSubmit = (data) => {
         updateStyleFromForm(data);
     };
-    console.log(styles);
     const [stylesWithSyntax, setStylesWithSyntax] = useState(styles);
     const handleChange = (event) => {
         event.preventDefault();

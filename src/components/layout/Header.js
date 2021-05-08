@@ -1,10 +1,10 @@
 import { StyleContext } from 'components/providers/ThemeProvider';
-import { Link } from 'react-router-dom';
 
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
 import ThemeApplicator from 'components/user/ThemeApplicator';
+import Nav from './Nav';
 
 const relativePath = 'src/components/layout/Header';
 const styledComponentNames = ['HeaderContainer'];
@@ -44,14 +44,7 @@ function Header() {
     return (
         <HeaderContainer HeaderContainer_props={HeaderContainer_props}>
             <FlexBetween>
-                <nav>
-                    <Link to="/">
-                        <button>HOME</button>
-                    </Link>
-                    <Link to="/settings">
-                        <button>SETTINGS</button>
-                    </Link>
-                </nav>
+                <Nav></Nav>
                 <ThemeApplicator></ThemeApplicator>
             </FlexBetween>
 
