@@ -1,4 +1,5 @@
 import 'App.scss';
+import GlobalStyle from 'components/layout/GlobalStyle';
 import Header from 'components/layout/Header';
 import Footer from 'components/layout/Footer';
 
@@ -10,7 +11,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 export default function App() {
     return (
         <ThemeProvider>
-            <div className="App">
+            <GlobalStyle>
                 <Header />
                 <main>
                     <Switch>
@@ -27,7 +28,7 @@ export default function App() {
                     </Switch>
                 </main>
                 <Footer />
-            </div>
+            </GlobalStyle>
         </ThemeProvider>
     );
 }

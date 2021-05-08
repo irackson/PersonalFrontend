@@ -14,8 +14,8 @@ const HeaderContainer = styled.header`
     font-size: ${(props) => props.HeaderContainer_props['font-size']};
     background-color: ${(props) =>
         props.HeaderContainer_props['background-color']};
-    padding-top: 10px;
-    height: min-content;
+    /* padding-top: 10px; */
+    /* height: min-content; */
 
     p {
         padding: 0px;
@@ -38,10 +38,7 @@ function Header() {
             // eslint-disable-next-line no-eval
             eval(styledCommands[i]);
         } catch (error) {
-            console.error(
-                '🚀 ~ file: WeatherIcon.js ~ line 39 ~ WeatherIcon ~ error',
-                error.message
-            );
+            console.error(error.message);
         }
     }
 

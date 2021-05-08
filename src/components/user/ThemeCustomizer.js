@@ -69,7 +69,7 @@ function ThemeCustomizer(props) {
             const updatedNewProp = { ...newProp };
             const newRule = new_watch();
             let validation = {};
-            if (newRule.property === '' && newRule.userPreference === '') {
+            if (newRule.property === '' && newRule.custom === '') {
                 updatedNewProp.message = undefined;
                 updatedNewProp.syntax = undefined;
                 setNewProp(updatedNewProp);
@@ -77,7 +77,7 @@ function ThemeCustomizer(props) {
                 return;
             } else {
                 validation = validate(`.validate {
-                    ${newRule.property} : ${newRule.userPreference};
+                    ${newRule.property} : ${newRule.custom};
                 }`);
             }
             updatedNewProp.message = validation[0]?.message;
@@ -159,7 +159,7 @@ function ThemeCustomizer(props) {
         const newPair = {};
         newPair[`${newRule.property}`] = {
             // default: 'unset',
-            userPreference: `${newRule.userPreference}`,
+            custom: `${newRule.custom}`,
         };
         const updatedStylesWithSyntax = [...stylesWithSyntax];
         const changingPathIndex = updatedStylesWithSyntax.findIndex(
@@ -248,9 +248,8 @@ function ThemeCustomizer(props) {
                                                                 defaultValue={
                                                                     comp[
                                                                         property
-                                                                    ]
-                                                                        .userPreference
-                                                                        ? `${comp[property].userPreference}`
+                                                                    ].custom
+                                                                        ? `${comp[property].custom}`
                                                                         : comp[
                                                                               property
                                                                           ]
@@ -284,7 +283,7 @@ function ThemeCustomizer(props) {
                                                                         null
                                                                     }
                                                                     {...new_register(
-                                                                        'userPreference'
+                                                                        'custom'
                                                                     )}
                                                                 />
                                                                 <button

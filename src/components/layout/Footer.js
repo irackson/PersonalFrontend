@@ -15,8 +15,6 @@ const FooterContainer = styled.footer`
     font-size: ${(props) => props.FooterContainer_props['font-size']};
     background-color: ${(props) =>
         props.FooterContainer_props['background-color']};
-    padding-top: 10px;
-    height: min-content;
 
     p {
         padding: 0px;
@@ -39,10 +37,7 @@ function Footer() {
             // eslint-disable-next-line no-eval
             eval(styledCommands[i]);
         } catch (error) {
-            console.error(
-                '🚀 ~ file: WeatherIcon.js ~ line 39 ~ WeatherIcon ~ error',
-                error.message
-            );
+            console.error(error.message);
         }
     }
 
