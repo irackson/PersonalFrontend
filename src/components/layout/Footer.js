@@ -1,5 +1,4 @@
-import ThemeApplicator from 'components/user/ThemeApplicator';
-import { Link } from 'react-router-dom';
+import Subscribe from 'components/layout/Subscribe';
 
 import { StyleContext } from 'components/providers/ThemeProvider';
 import { useContext } from 'react';
@@ -15,12 +14,6 @@ const FooterContainer = styled.footer`
     font-size: ${(props) => props.FooterContainer_props['font-size']};
     background-color: ${(props) =>
         props.FooterContainer_props['background-color']};
-
-    p {
-        padding: 0px;
-        margin: 0px;
-        font-weight: bold;
-    }
 `;
 const FooterContainer_props = {};
 
@@ -43,8 +36,7 @@ function Footer() {
 
     return (
         <FooterContainer FooterContainer_props={FooterContainer_props}>
-            {/* <p>manage theme</p> */}
-            <ThemeApplicator></ThemeApplicator>
+            <Subscribe></Subscribe>
         </FooterContainer>
     );
 }

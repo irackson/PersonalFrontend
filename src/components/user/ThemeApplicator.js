@@ -6,7 +6,7 @@ import { StyleContext } from 'components/providers/ThemeProvider';
 function ThemeApplicator(props) {
     const { styles, themes, updateThemeSelection } = useContext(StyleContext);
     return (
-        <>
+        <div>
             {themes.otherThemes.map((e, i) => (
                 <button
                     type="button"
@@ -18,7 +18,7 @@ function ThemeApplicator(props) {
                     {e}
                 </button>
             ))}
-        </>
+        </div>
     );
 }
 

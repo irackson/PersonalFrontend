@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
+import ThemeApplicator from 'components/user/ThemeApplicator';
 
 const relativePath = 'src/components/layout/Header';
 const styledComponentNames = ['HeaderContainer'];
@@ -14,16 +15,14 @@ const HeaderContainer = styled.header`
     font-size: ${(props) => props.HeaderContainer_props['font-size']};
     background-color: ${(props) =>
         props.HeaderContainer_props['background-color']};
-    /* padding-top: 10px; */
-    /* height: min-content; */
-
-    p {
-        padding: 0px;
-        margin: 0px;
-        font-weight: bold;
-    }
 `;
 const HeaderContainer_props = {};
+
+const FlexBetween = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+`;
 
 function Header() {
     const { styles, themes } = useContext(StyleContext);
@@ -44,16 +43,19 @@ function Header() {
 
     return (
         <HeaderContainer HeaderContainer_props={HeaderContainer_props}>
-            <nav>
-                <Link to="/">
-                    <button>HOME</button>
-                </Link>
+            <FlexBetween>
+                <nav>
+                    <Link to="/">
+                        <button>HOME</button>
+                    </Link>
+                    <Link to="/settings">
+                        <button>SETTINGS</button>
+                    </Link>
+                </nav>
+                <ThemeApplicator></ThemeApplicator>
+            </FlexBetween>
 
-                <Link to="/settings">
-                    <button>THEME</button>
-                </Link>
-            </nav>
-            <p>IAN RACKSON WEB DEV</p>
+            <h1>IAN RACKSON WEB DEV</h1>
         </HeaderContainer>
     );
 }
