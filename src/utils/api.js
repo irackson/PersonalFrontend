@@ -1,8 +1,8 @@
-const apiRoute =
-    process.env.NODE_ENV === 'production'
-        ? 'http://api.ianrackson.com'
-        : 'http://localhost:3001';
-
+// const apiRoute =
+//     process.env.NODE_ENV === 'production'
+//         ? 'http://api.ianrackson.com'
+//         : 'http://localhost:3001';
+const apiRoute = 'http://api.ianrackson.com';
 const getHome = async () => {
     var myHeaders = new Headers();
 
