@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-// import { getBlogBySlug } from 'utils/api';
+import { getBlogBySlug } from 'utils/api';
 
 const BlogArticle = (props) => {
     const slug = props.match.params.slug;
