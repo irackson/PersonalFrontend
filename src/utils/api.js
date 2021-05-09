@@ -1,6 +1,6 @@
 const apiRoute =
     process.env.NODE_ENV === 'production'
-        ? 'http://api.ianrackson.com'
+        ? 'https://api.ianrackson.com'
         : 'http://localhost:3001';
 
 export const getHome = async () => {
