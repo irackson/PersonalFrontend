@@ -8,7 +8,8 @@
 -   figure out themed styling for nav links on given page
 -   nav bar collape on mobile, expand on desktop
 -   theme selector always collapes, with
--   cache api requests so data is only fetched once even if user navigates away and then back (https://www.smashingmagazine.com/2020/07/custom-react-hook-fetch-cache-data/) (https://github.com/ooade/use-fetch-hook/tree/master/src)
+-   cache api requests so data is only fetched once even if user navigates away and then back (<https://www.smashingmagazine.com/2020/07/custom-react-hook-fetch-cache-data/>) (<https://github.com/ooade/use-fetch-hook/tree/master/src>)
+-   cors
 
 Components:
 
