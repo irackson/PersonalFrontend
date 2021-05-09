@@ -3,7 +3,7 @@
 //         ? 'http://api.ianrackson.com'
 //         : 'http://localhost:3001';
 const apiRoute = 'http://api.ianrackson.com';
-const getHome = async () => {
+export const getHome = async () => {
     var myHeaders = new Headers();
 
     var requestOptions = {
@@ -20,7 +20,7 @@ const getHome = async () => {
     });
 };
 
-const getProjects = async () => {
+export const getProjects = async () => {
     var myHeaders = new Headers();
 
     var requestOptions = {
@@ -37,7 +37,7 @@ const getProjects = async () => {
     });
 };
 
-const getProjectBySlug = async (slug) => {
+export const getProjectBySlug = async (slug) => {
     var myHeaders = new Headers();
 
     var requestOptions = {
@@ -57,7 +57,7 @@ const getProjectBySlug = async (slug) => {
     });
 };
 
-const getBlogs = async () => {
+export const getBlogs = async () => {
     var myHeaders = new Headers();
 
     var requestOptions = {
@@ -74,7 +74,7 @@ const getBlogs = async () => {
     });
 };
 
-const getBlogBySlug = async (slug) => {
+export const getBlogBySlug = async (slug) => {
     var myHeaders = new Headers();
 
     var requestOptions = {
@@ -89,12 +89,4 @@ const getBlogBySlug = async (slug) => {
     return new Promise(function (myResolve) {
         myResolve(data);
     });
-};
-
-module.exports = {
-    getHome,
-    getProjects,
-    getProjectBySlug,
-    getBlogs,
-    getBlogBySlug,
 };
