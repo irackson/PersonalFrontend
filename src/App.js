@@ -8,7 +8,7 @@ import Blog from 'pages/Blog';
 import BlogArticle from 'pages/BlogArticle';
 import Home from 'pages/Home';
 import Metrics from 'pages/Metrics';
-import ProjectPiece from 'pages/ProjectPiece';
+import ProjectArticle from 'pages/ProjectArticle';
 import Projects from 'pages/Projects';
 import Resume from 'pages/Resume';
 import Settings from 'pages/Settings';
@@ -47,7 +47,7 @@ export default function App() {
                         ></Route>
                         <Route
                             path="/projects/:slug"
-                            render={(props) => <ProjectPiece {...props} />}
+                            render={(props) => <ProjectArticle {...props} />}
                         ></Route>
                         <Route
                             path="/resume"

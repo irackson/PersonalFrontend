@@ -6,6 +6,7 @@ const Nav = (props) => {
     const [currentPage, setCurrentPage] = useState(history.location.pathname);
 
     const getStyle = (page) => {
+        // TODO: account for slugs
         if (page === currentPage) {
             return { backgroundColor: 'red' };
         } else {
