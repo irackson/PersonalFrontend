@@ -1,6 +1,30 @@
+import 'GitCalStyle.css';
+import GitHubCalendar from 'github-calendar';
+import { useState, useEffect } from 'react';
+
 const Metrics = (props) => {
+    const [cal, setCal] = useState(null);
+
+    const getCal = () => {
+        const calendar = GitHubCalendar('.calendar', 'irackson', {
+            summary_text:
+                'Summary of my Github pull requests, issues opened, and commits',
+            responsive: true,
+            tooltips: true,
+        });
+        setCal(calendar);
+    };
+
+    useEffect(() => {
+        getCal();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <>
+            <section>
+                <div className="calendar"></div>
+            </section>
             <section>
                 <figure>
                     <embed
