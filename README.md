@@ -2,10 +2,6 @@
 
 # Getting Started with Create React App
 
-        "rules": {
-            "no-unused-vars": "off"
-        }
-
 ### TODO
 
 -   non visible routes should have links, but also shouldn't work if you just type the - url

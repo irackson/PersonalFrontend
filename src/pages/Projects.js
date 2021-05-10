@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { getProjects } from 'utils/api';
 
@@ -15,13 +16,17 @@ const Project = (props) => {
     }, []);
 
     if (data) {
-        return <h4>{JSON.stringify(data)}</h4>;
-    } else {
         return (
             <>
-                <h2>Project Index</h2>{' '}
+                {data.projects.map((project, i) => (
+                    <Link to={`/projects/${project.slug}`} key={i}>
+                        <p>{project.title}</p>
+                    </Link>
+                ))}
             </>
         );
+    } else {
+        return <>{/* <h2>Project Index</h2>{' '} */}</>;
     }
 };
 export default Project;

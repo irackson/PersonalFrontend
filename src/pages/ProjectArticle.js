@@ -25,11 +25,7 @@ const ProjectArticle = (props) => {
             return <h4>{JSON.stringify(data)}</h4>;
         }
     } else {
-        return (
-            <>
-                <h2>ProjectArticle</h2>{' '}
-            </>
-        );
+        return <>{/* <h2>ProjectArticle</h2>{' '} */}</>;
     }
 };
 export default ProjectArticle;

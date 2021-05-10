@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { getBlogs } from 'utils/api';
-
 const Blog = (props) => {
     const [data, setData] = useState(null);
 
@@ -15,13 +15,17 @@ const Blog = (props) => {
     }, []);
 
     if (data) {
-        return <h4>{JSON.stringify(data)}</h4>;
-    } else {
         return (
             <>
-                <h2>Blog Index</h2>{' '}
+                {data.blogs.map((blog, i) => (
+                    <Link to={`/blog/${blog.slug}`} key={i}>
+                        <p>{blog.title}</p>
+                    </Link>
+                ))}
             </>
         );
+    } else {
+        return <>{/* <h2>Loading Blog Index</h2>{' '} */}</>;
     }
 };
 export default Blog;
