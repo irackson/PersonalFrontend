@@ -20,6 +20,23 @@ export const getHome = async () => {
     });
 };
 
+export const getAbout = async () => {
+    var myHeaders = new Headers();
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    };
+
+    const response = await fetch(`${apiRoute}/about`, requestOptions);
+    const data = await response.json();
+
+    return new Promise(function (myResolve) {
+        myResolve(data);
+    });
+};
+
 export const getProjects = async () => {
     var myHeaders = new Headers();
 
