@@ -30,7 +30,7 @@ export const themeReducer = (state, action) => {
 //! style reducer
 export const UPDATE_USER_STYLE = 'UPDATE_USER_STYLE';
 
-const updateStyleStateFromcustomForm = (formData, styles) => {
+const updateStyleStateFromCustomForm = (formData, styles) => {
     const updatedStyle = [...styles];
     updatedStyle.map((file) => {
         file.customizableComponents.map((comp) => {
@@ -39,8 +39,14 @@ const updateStyleStateFromcustomForm = (formData, styles) => {
                 .filter((e) => e !== 'name')
                 .map((property) => {
                     // console.log('original', comp[property].custom);
-                    comp[property].custom =
-                        formData[file.path][comp.name][property];
+                    const newProp = formData[file.path][comp.name][
+                        property
+                    ].includes('__proto__')
+                        ? null
+                        : formData[file.path][comp.name][property];
+                    console.log(newProp);
+                    console.log(property);
+                    comp[property].custom = newProp;
                     // const newPref = formData[file.path][comp.name][property];
                     // console.log(newPref);
                     // console.log('form', formData[file.path][comp][property]);
@@ -62,7 +68,7 @@ const updateStyleStateFromcustomForm = (formData, styles) => {
 export const styleReducer = (state, action) => {
     switch (action.type) {
         case UPDATE_USER_STYLE:
-            return updateStyleStateFromcustomForm(action.preferences, state);
+            return updateStyleStateFromCustomForm(action.preferences, state);
         default:
             return state;
     }
