@@ -39,17 +39,14 @@ function ThemeCustomizer(props) {
         reset,
     } = useForm();
 
-    const {
-        styles,
-        updateStyleFromForm,
-        themes,
-        updateThemeSelection,
-    } = useContext(StyleContext);
+    const { styles, updateStyleFromForm, themes, updateThemeSelection } =
+        useContext(StyleContext);
     const {
         register,
         handleSubmit,
         control,
         watch,
+        reset: formReset,
         setError,
         formState: { errors },
         // formState: { errors },
@@ -57,6 +54,7 @@ function ThemeCustomizer(props) {
 
     const onSubmit = (data) => {
         updateStyleFromForm(data);
+        formReset();
     };
     const [stylesWithSyntax, setStylesWithSyntax] = useState(styles);
     const handleChange = (event) => {

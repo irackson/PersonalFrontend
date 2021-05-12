@@ -34,23 +34,15 @@ const updateStyleStateFromCustomForm = (formData, styles) => {
     const updatedStyle = [...styles];
     updatedStyle.map((file) => {
         file.customizableComponents.map((comp) => {
-            // console.log(formData[`${file.path}`]);
             Object.keys(comp)
                 .filter((e) => e !== 'name')
                 .map((property) => {
-                    // console.log('original', comp[property].custom);
                     const newProp = formData[file.path][comp.name][
                         property
                     ].includes('__proto__')
-                        ? null
+                        ? 'nice try'
                         : formData[file.path][comp.name][property];
-                    console.log(newProp);
-                    console.log(property);
                     comp[property].custom = newProp;
-                    // const newPref = formData[file.path][comp.name][property];
-                    // console.log(newPref);
-                    // console.log('form', formData[file.path][comp][property]);
-                    // console.log('new', )
                     return property;
                 });
 

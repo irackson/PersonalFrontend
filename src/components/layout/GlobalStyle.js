@@ -12,7 +12,7 @@ const GlobalContainer = styled.div`
     font-family: ${(props) => props.GlobalContainer_props['font-family']};
     color: ${(props) => props.GlobalContainer_props['color']};
     background: ${(props) => props.GlobalContainer_props['background']};
-    padding: ${(props) => props.GlobalContainer_props['margin']};
+    padding: ${(props) => props.GlobalContainer_props['padding']};
 `;
 const GlobalContainer_props = {};
 
