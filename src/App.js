@@ -12,9 +12,23 @@ import ProjectArticle from 'pages/ProjectArticle';
 import Projects from 'pages/Projects';
 import Resume from 'pages/Resume';
 import Settings from 'pages/Settings';
+import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import { getAll } from 'utils/api';
 
 export default function App() {
+    const [allData, setAllData] = useState({ isLoaded: false });
+
+    const getAllData = async () => {
+        setAllData({ ...(await getAll()), isLoaded: true });
+    };
+    console.log(allData);
+
+    useEffect(() => {
+        getAllData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <ThemeProvider>
             <GlobalStyle>
@@ -24,7 +38,15 @@ export default function App() {
                         <Route
                             exact
                             path="/"
-                            render={(props) => <Home {...props} />}
+                            render={(props) => (
+                                <Home
+                                    {...props}
+                                    contact={allData.contact}
+                                    featuredBlog={allData.featuredBlog}
+                                    featuredProject={allData.featuredProject}
+                                    isLoaded={allData.isLoaded}
+                                />
+                            )}
                         ></Route>
                         <Route
                             path="/settings"

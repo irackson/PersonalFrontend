@@ -3,6 +3,23 @@ const apiRoute =
         ? 'https://api.ianrackson.com'
         : 'http://localhost:3001';
 
+export const getAll = async () => {
+    var myHeaders = new Headers();
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow',
+    };
+
+    const response = await fetch(`${apiRoute}/all`, requestOptions);
+    const data = await response.json();
+
+    return new Promise(function (myResolve) {
+        myResolve(data);
+    });
+};
+
 export const getHome = async () => {
     var myHeaders = new Headers();
 
