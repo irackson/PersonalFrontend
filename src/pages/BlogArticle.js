@@ -1,31 +1,44 @@
-import { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import { getBlogBySlug } from 'utils/api';
-
+import Markdown from 'components/Markdown';
 const BlogArticle = (props) => {
-    const slug = props.match.params.slug;
-    const [data, setData] = useState(null);
+    const loaded = () => {
+        const blog = props.blogs.filter(
+            (e) => e.slug === props.match.params.slug
+        )[0];
 
-    const getData = async () => {
-        const article = await getBlogBySlug(slug);
-        setData(article);
+        return typeof blog === 'undefined' ? (
+            <Redirect to="/" />
+        ) : (
+            <div>
+                <h1>{blog.title}</h1>
+                <h2>{blog.description}</h2>
+                <a
+                    href={blog.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    link to code repo
+                </a>
+                <a
+                    href={blog.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    link to live site
+                </a>
+                <img src={blog.thumbnail} alt={blog.slug}></img>
+                <h5>{blog.createdAt}</h5>
+                <h5>{blog.updatedAt}</h5>
+                <Markdown sanitizedHtml={blog.sanitizedHtml}></Markdown>
+            </div>
+        );
     };
 
-    useEffect(() => {
-        getData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const loading = () => {
+        return <div>loading blog...</div>;
+    };
 
-    if (data) {
-        if (data.blogs) {
-            //* avoid index data from catchall being displayed under slug url
-            return <Redirect to="/blog"></Redirect>;
-        } else {
-            return <h4>{JSON.stringify(data)}</h4>;
-        }
-    } else {
-        return <>{/* <h2>BlogArticle</h2>{' '} */}</>;
-    }
+    return props.isLoaded ? loaded() : loading();
 };
 export default BlogArticle;

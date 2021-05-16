@@ -1,31 +1,45 @@
-import { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import { getProjectBySlug } from 'utils/api';
-
+import { useEffect } from 'react';
+import Markdown from 'components/Markdown';
 const ProjectArticle = (props) => {
-    const slug = props.match.params.slug;
-    const [data, setData] = useState(null);
+    const loaded = () => {
+        const project = props.projects.filter(
+            (e) => e.slug === props.match.params.slug
+        )[0];
 
-    const getData = async () => {
-        const article = await getProjectBySlug(slug);
-        setData(article);
+        return typeof project === 'undefined' ? (
+            <Redirect to="/" />
+        ) : (
+            <div>
+                <h1>{project.title}</h1>
+                <h2>{project.description}</h2>
+                <a
+                    href={project.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    link to code repo
+                </a>
+                <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    link to live site
+                </a>
+                <img src={project.thumbnail} alt={project.slug}></img>
+                <h5>{project.createdAt}</h5>
+                <h5>{project.updatedAt}</h5>
+                <Markdown sanitizedHtml={project.sanitizedHtml}></Markdown>
+            </div>
+        );
     };
 
-    useEffect(() => {
-        getData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const loading = () => {
+        return <div>loading project...</div>;
+    };
 
-    if (data) {
-        if (data.projects) {
-            //* avoid index data from catchall being displayed under slug url
-            return <Redirect to="/projects"></Redirect>;
-        } else {
-            return <h4>{JSON.stringify(data)}</h4>;
-        }
-    } else {
-        return <>{/* <h2>ProjectArticle</h2>{' '} */}</>;
-    }
+    return props.isLoaded ? loaded() : loading();
 };
 export default ProjectArticle;

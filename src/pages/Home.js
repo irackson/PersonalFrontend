@@ -46,7 +46,7 @@ const Home = (props) => {
                             <p key={i}>
                                 <a
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     href={props.contact.social[`${social}`]}
                                     key={i}
                                 >
@@ -101,7 +101,7 @@ const Home = (props) => {
                         <p>
                             <a
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 href="https://twitter.com/IanRacksonFSWD/"
                             >
                                 twitter
@@ -110,7 +110,7 @@ const Home = (props) => {
                         <p>
                             <a
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 href="https://ga-students.slack.com/team/U01GN8NP1C5"
                             >
                                 slack
@@ -119,7 +119,7 @@ const Home = (props) => {
                         <p>
                             <a
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 href="https://github.com/irackson/"
                             >
                                 github
@@ -128,7 +128,7 @@ const Home = (props) => {
                         <p>
                             <a
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 href="https://www.linkedin.com/in/ianrackson/"
                             >
                                 linkedin
@@ -137,7 +137,7 @@ const Home = (props) => {
                         <p>
                             <a
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 href="https://www.youtube.com/channel/UChtYvxQVNWgsySzDJRcv6SQ"
                             >
                                 youtube

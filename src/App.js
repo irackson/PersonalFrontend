@@ -22,7 +22,6 @@ export default function App() {
     const getAllData = async () => {
         setAllData({ ...(await getAll()), isLoaded: true });
     };
-    console.log(allData);
 
     useEffect(() => {
         getAllData();
@@ -55,21 +54,45 @@ export default function App() {
                         <Route
                             path="/blog"
                             exact
-                            render={(props) => <Blog {...props} />}
+                            render={(props) => (
+                                <Blog
+                                    {...props}
+                                    blogs={allData.blogs}
+                                    isLoaded={allData.isLoaded}
+                                />
+                            )}
                         ></Route>
                         <Route
                             path="/blog/:slug"
-                            render={(props) => <BlogArticle {...props} />}
+                            render={(props) => (
+                                <BlogArticle
+                                    {...props}
+                                    blogs={allData.blogs}
+                                    isLoaded={allData.isLoaded}
+                                />
+                            )}
                         ></Route>
 
                         <Route
                             path="/projects"
                             exact
-                            render={(props) => <Projects {...props} />}
+                            render={(props) => (
+                                <Projects
+                                    {...props}
+                                    projects={allData.projects}
+                                    isLoaded={allData.isLoaded}
+                                />
+                            )}
                         ></Route>
                         <Route
                             path="/projects/:slug"
-                            render={(props) => <ProjectArticle {...props} />}
+                            render={(props) => (
+                                <ProjectArticle
+                                    {...props}
+                                    projects={allData.projects}
+                                    isLoaded={allData.isLoaded}
+                                />
+                            )}
                         ></Route>
                         <Route
                             path="/resume"
@@ -77,7 +100,13 @@ export default function App() {
                         ></Route>
                         <Route
                             path="/about"
-                            render={(props) => <About {...props} />}
+                            render={(props) => (
+                                <About
+                                    {...props}
+                                    about={allData.about}
+                                    isLoaded={allData.isLoaded}
+                                />
+                            )}
                         ></Route>
                         <Route
                             path="/metrics"
