@@ -13,10 +13,10 @@ const styleSeed = [
                     minimal: 'Times New Roman, Times, serif',
                 },
                 color: {
-                    default: 'rgb(68, 68, 68) !default',
-                    light: 'rgb(34, 34, 34) !default',
-                    dark: 'rgb(237, 237, 237) !default',
-                    fun: 'rgb(60, 206, 138) !default',
+                    default: 'rgb(68, 68, 68)',
+                    light: 'rgb(34, 34, 34)',
+                    dark: 'rgb(237, 237, 237)',
+                    fun: 'rgb(60, 206, 138)',
                 },
                 background: {
                     default: 'rgb(216, 215, 163)',

@@ -13,20 +13,6 @@ const BlogArticle = (props) => {
             <div>
                 <h1>{blog.title}</h1>
                 <h2>{blog.description}</h2>
-                <a
-                    href={blog.codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    link to code repo
-                </a>
-                <a
-                    href={blog.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    link to live site
-                </a>
                 <img src={blog.thumbnail} alt={blog.slug}></img>
                 <h5>{blog.createdAt}</h5>
                 <h5>{blog.updatedAt}</h5>
