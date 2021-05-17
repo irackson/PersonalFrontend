@@ -2,19 +2,16 @@ import { StyleContext } from 'components/providers/ThemeProvider';
 import Prism from 'prismjs';
 import { useEffect, useState, useContext } from 'react';
 
+const baseURL = process.env.REACT_APP_BASE_URL;
+
 const Markdown = (props) => {
     const { themes } = useContext(StyleContext);
-    // console.log(themes);
+
     useEffect(() => {
         Prism.highlightAll();
     }, []);
 
     const [sheet, setSheet] = useState(null);
-
-    const baseURL =
-        process.env.NODE_ENV === 'production'
-            ? 'https://ianrackson.com'
-            : 'http://localhost:3000';
 
     useEffect(() => {
         console.log(themes.currentTheme);

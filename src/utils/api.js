@@ -1,8 +1,8 @@
-const apiRoute =
-    process.env.NODE_ENV === 'production'
-        ? 'https://api.ianrackson.com'
-        : 'http://localhost:3001';
-
+const apiRoute = process.env.REACT_APP_API_URL;
+//     process.env.NODE_ENV === 'production'
+//         ? process.env.REACT_APP_API_URL
+//         : process.env.REACT_APP_API_URL_DEV;
+console.log(apiRoute);
 export const getAll = async () => {
     var myHeaders = new Headers();
 
