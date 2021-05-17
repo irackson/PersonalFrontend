@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Project = (props) => {
     const loaded = () => {

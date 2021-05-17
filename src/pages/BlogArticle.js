@@ -1,6 +1,8 @@
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import Markdown from 'components/Markdown';
+import { useEffect } from 'react';
+
 const BlogArticle = (props) => {
     const loaded = () => {
         const blog = props.blogs.filter(

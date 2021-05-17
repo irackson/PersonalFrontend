@@ -1,6 +1,5 @@
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import { useEffect } from 'react';
 import Markdown from 'components/Markdown';
 const ProjectArticle = (props) => {
     const loaded = () => {

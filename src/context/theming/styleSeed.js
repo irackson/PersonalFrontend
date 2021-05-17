@@ -94,14 +94,22 @@ const styleSeed = [
                     default: 'inherit',
                     fun: 'normal',
                 },
+                color: {
+                    default: 'inherit',
+                    fun: 'yellow',
+                },
+                background: {
+                    default: 'inherit',
+                    fun: 'gray',
+                },
             },
         ],
     },
 ];
 
 const themeSeed = {
-    currentTheme: 'custom',
-    otherThemes: ['default', 'light', 'dark', 'fun', 'minimal'],
+    currentTheme: 'default',
+    otherThemes: ['custom', 'light', 'dark', 'fun', 'minimal'],
 };
 
 module.exports = {

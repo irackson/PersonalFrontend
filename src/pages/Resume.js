@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 const Resume = (props) => {
     return (
         <div>

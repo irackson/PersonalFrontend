@@ -26,6 +26,8 @@ const MarkdownCode = styled.div`
         /* text-align: ${(props) => props.MarkdownCode_props['text-align']}; */
         line-height: ${(props) => props.MarkdownCode_props['line-height']};
         white-space: ${(props) => props.MarkdownCode_props['white-space']};
+        color: ${(props) => props.MarkdownCode_props['color']};
+        background: ${(props) => props.MarkdownCode_props['background']};
         /* flex-direction: row-reverse !important; */
     }
 `;
@@ -57,8 +59,6 @@ const Markdown = (props) => {
     const [sheet, setSheet] = useState(null);
 
     useEffect(() => {
-        console.log(themes.currentTheme);
-        console.log(styles);
         switch (themes.currentTheme) {
             case 'light':
                 setSheet('prism/prism-coy.css');
@@ -73,13 +73,14 @@ const Markdown = (props) => {
                 setSheet('prism/prism-funky.css');
                 break;
             case 'custom':
-                setSheet('prism/prism-tomorrownight.css');
+                setSheet('');
                 break;
 
             default:
                 setSheet('prism/prism-tomorrownight.css');
                 break;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [themes.currentTheme]);
 
     return (

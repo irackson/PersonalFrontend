@@ -1,25 +1,53 @@
 import { Link, useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Nav = (props) => {
-    const history = useHistory();
+    const history = useHistory(null);
     const [currentPage, setCurrentPage] = useState(history.location.pathname);
 
     const getStyle = (page) => {
-        // TODO: account for slugs
-        if (page === currentPage) {
+        if (currentPage.match(`${page}`)) {
             return { backgroundColor: 'red' };
         } else {
             return { backgroundColor: 'green' };
         }
     };
 
+    const [locationKeys, setLocationKeys] = useState([]);
+
+    useEffect(() => {
+        return history.listen((location) => {
+            if (history.action === 'PUSH') {
+                setLocationKeys([location.key]);
+            }
+
+            if (history.action === 'POP') {
+                if (locationKeys[1] === location.key) {
+                    setLocationKeys(([_, ...keys]) => keys);
+                    setCurrentPage(history.location.pathname);
+
+                    // Handle forward event
+                } else {
+                    setLocationKeys((keys) => [location.key, ...keys]);
+
+                    setCurrentPage(history.location.pathname);
+                    // Handle back event
+                }
+            }
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [locationKeys]);
+
+    useEffect(() => {
+        console.log(currentPage);
+    }, [currentPage]);
+
     return (
         <nav>
             <Link to="/">
                 <button
-                    style={getStyle('/')}
-                    onClick={() => setCurrentPage('/')}
+                    style={getStyle('/home')}
+                    onClick={() => setCurrentPage('/home')}
                 >
                     HOME
                 </button>
