@@ -74,6 +74,29 @@ const styleSeed = [
             },
         ],
     },
+    {
+        path: 'src/components/Markdown',
+        customizableComponents: [
+            {
+                name: 'MarkdownHeading',
+                color: {
+                    default: 'inherit',
+                    fun: 'orange',
+                },
+            },
+            {
+                name: 'MarkdownCode',
+                'line-height': {
+                    default: 'inherit',
+                    fun: '20px',
+                },
+                'white-space': {
+                    default: 'inherit',
+                    fun: 'normal',
+                },
+            },
+        ],
+    },
 ];
 
 const themeSeed = {

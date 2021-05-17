@@ -2,10 +2,53 @@ import { StyleContext } from 'components/providers/ThemeProvider';
 import Prism from 'prismjs';
 import { useEffect, useState, useContext } from 'react';
 
+import styled from 'styled-components';
+import { getStyledCommands } from 'utils/theme-helper';
+
+const relativePath = 'src/components/Markdown';
+const styledComponentNames = ['MarkdownHeading', 'MarkdownCode'];
+
+const MarkdownHeading = styled.div`
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: ${(props) => props.MarkdownHeading_props['color']};
+    }
+`;
+const MarkdownHeading_props = {};
+
+const MarkdownCode = styled.div`
+    pre code,
+    pre span {
+        /* text-align: ${(props) => props.MarkdownCode_props['text-align']}; */
+        line-height: ${(props) => props.MarkdownCode_props['line-height']};
+        white-space: ${(props) => props.MarkdownCode_props['white-space']};
+        /* flex-direction: row-reverse !important; */
+    }
+`;
+const MarkdownCode_props = {};
+
 const baseURL = process.env.REACT_APP_BASE_URL;
 
 const Markdown = (props) => {
-    const { themes } = useContext(StyleContext);
+    const { styles, themes } = useContext(StyleContext);
+    const styledCommands = getStyledCommands(
+        styles,
+        themes.currentTheme,
+        styledComponentNames,
+        relativePath
+    );
+    for (let i = 0; i < styledCommands.length; i++) {
+        try {
+            // eslint-disable-next-line no-eval
+            eval(styledCommands[i]);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
 
     useEffect(() => {
         Prism.highlightAll();
@@ -15,6 +58,7 @@ const Markdown = (props) => {
 
     useEffect(() => {
         console.log(themes.currentTheme);
+        console.log(styles);
         switch (themes.currentTheme) {
             case 'light':
                 setSheet('prism/prism-coy.css');
@@ -39,17 +83,18 @@ const Markdown = (props) => {
     }, [themes.currentTheme]);
 
     return (
-        <>
-            <link rel="stylesheet" href={`${baseURL}/${sheet}`} />
-
-            <div>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: props.sanitizedHtml,
-                    }}
-                ></div>
-            </div>
-        </>
+        <MarkdownHeading MarkdownHeading_props={MarkdownHeading_props}>
+            <MarkdownCode MarkdownCode_props={MarkdownCode_props}>
+                <link rel="stylesheet" href={`${baseURL}/${sheet}`} />
+                <div>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: props.sanitizedHtml,
+                        }}
+                    ></div>
+                </div>
+            </MarkdownCode>
+        </MarkdownHeading>
     );
 };
 

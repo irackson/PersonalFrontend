@@ -1,6 +1,6 @@
 import { StyleContext } from 'components/providers/ThemeProvider';
 
-import { useState, useEffect, useContext, useRef } from 'react';
+import { useState, useEffect, useContext, useRef, Component } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 
 import styled from 'styled-components';
@@ -53,6 +53,7 @@ function ThemeCustomizer(props) {
     } = useForm();
 
     const onSubmit = (data) => {
+        console.log(data);
         updateStyleFromForm(data);
         formReset();
     };
@@ -80,6 +81,8 @@ function ThemeCustomizer(props) {
             updatedNewProp.message = validation[0]?.message;
             updatedNewProp.syntax = validation[0]?.syntax;
             setNewProp(updatedNewProp);
+        } else if (event.target.localName === 'select') {
+            console.log(watch());
         } else {
             const changingPath = event.target.name.split('.')[0];
             const changingComp = event.target.name.split('.')[1];
@@ -259,6 +262,21 @@ function ThemeCustomizer(props) {
                                                         </Div>
                                                     </div>
                                                 ))}
+                                            {/* {file.path ===
+                                                'src/components/Markdown' &&
+                                            comp.name === 'MarkdownCode' ? (
+                                                <select
+                                                    name="codeTheme"
+                                                    {...register(`codeTheme`)}
+                                                >
+                                                    <option value="opt1">
+                                                        opt1
+                                                    </option>
+                                                    <option value="opt2">
+                                                        opt2
+                                                    </option>
+                                                </select>
+                                            ) : null} */}
                                             <>
                                                 {newProp.file === file.path &&
                                                 newProp.comp === comp.name ? (
@@ -334,6 +352,7 @@ function ThemeCustomizer(props) {
                             </fieldset>
                         </div>
                     ))}
+                    <div></div>
                 </section>
                 <input ref={submitRef} type="submit" />
             </form>
