@@ -34,7 +34,6 @@ const ThemeProvider = (props) => {
     );
 
     const updateThemeSelection = (selection) => {
-        console.log('before', themeState.currentTheme);
         if (themeState.currentTheme !== selection) {
             setTimeout(() => {
                 themeDispatch({ type: CHANGE_THEME, selection: selection });

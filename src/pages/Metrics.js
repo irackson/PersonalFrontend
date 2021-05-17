@@ -1,4 +1,4 @@
-import 'GitCalStyle.css';
+import 'styles/vendors/GitCalStyle.css';
 import GitHubCalendar from 'github-calendar';
 import { useState, useEffect } from 'react';
 

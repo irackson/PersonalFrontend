@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'index.scss';
+import 'styles/app/index.scss';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
 //! import the BrowserRouter and assign an alias

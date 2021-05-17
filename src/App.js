@@ -1,4 +1,4 @@
-import 'App.scss';
+import 'styles/app/App.scss';
 import Footer from 'components/layout/Footer';
 import GlobalStyle from 'components/layout/GlobalStyle';
 import Header from 'components/layout/Header';
