@@ -1,16 +1,40 @@
 import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+const selectedStyle = { backgroundColor: 'red', outline: '1px dashed white' };
+const nonSelectedStyle = {
+    backgroundColor: 'green',
+    outline: '2px solid black',
+};
+
 const Nav = (props) => {
     const history = useHistory(null);
     const [currentPage, setCurrentPage] = useState(history.location.pathname);
 
     const getStyle = (page) => {
+        let style = {};
         if (currentPage.match(`${page}`)) {
-            return { backgroundColor: 'red' };
+            style = selectedStyle;
         } else {
-            return { backgroundColor: 'green' };
+            style = nonSelectedStyle;
         }
+        if (
+            currentPage.match(`${page}`) &&
+            page === '/' &&
+            currentPage !== '/'
+        ) {
+            style = nonSelectedStyle;
+        }
+        return style;
+
+        // if (currentPage.match(`${page}`)) {
+        //     style = selectedStyle;
+        // } else {
+        //     if (!currentPage.match(`${page}`) && currentPage === '/') {
+        //         style = nonS
+        //     }
+        //     return nonSelectedStyle;
+        // }
     };
 
     const [locationKeys, setLocationKeys] = useState([]);
@@ -46,8 +70,8 @@ const Nav = (props) => {
         <nav>
             <Link to="/">
                 <button
-                    style={getStyle('/home')}
-                    onClick={() => setCurrentPage('/home')}
+                    style={getStyle('/')}
+                    onClick={() => setCurrentPage('/')}
                 >
                     HOME
                 </button>
