@@ -53,7 +53,6 @@ function ThemeCustomizer(props) {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
         updateStyleFromForm(data);
         formReset();
     };

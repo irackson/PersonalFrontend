@@ -1,7 +1,7 @@
 import Subscribe from 'components/layout/Subscribe';
 
 import { StyleContext } from 'components/providers/ThemeProvider';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
 import { doSubscribe } from 'utils/api';

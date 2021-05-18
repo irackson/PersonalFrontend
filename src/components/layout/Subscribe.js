@@ -7,7 +7,7 @@ const Subscribe = (props) => {
         projects: props.subState.projects,
         blog: props.subState.blog,
     });
-
+    console.log(subForm);
     const handleChange = (event) => {
         const updatedSubForm = { ...subForm };
         if (event.target.type === 'checkbox') {
@@ -32,14 +32,7 @@ const Subscribe = (props) => {
         } else {
             delete validatedForm.blog;
         }
-        // console.log(validatedForm);
         props.processSubscription(validatedForm);
-        // setSubForm({
-        //     first_name: subForm.first_name,
-        //     email: subForm.email,
-        //     projects: props.subState.projects,
-        //     blog: props.subState.blog
-        // })
     };
 
     return (
