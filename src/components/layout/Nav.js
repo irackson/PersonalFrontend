@@ -1,5 +1,16 @@
 import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
+const onButton = styled.button`
+    background-color: red;
+    outline: 1px dashed white;
+`;
+
+const offButton = styled.button`
+    background-color: green;
+    outline: 2px solid black;
+`;
 
 const selectedStyle = { backgroundColor: 'red', outline: '1px dashed white' };
 const nonSelectedStyle = {
@@ -26,15 +37,6 @@ const Nav = (props) => {
             style = nonSelectedStyle;
         }
         return style;
-
-        // if (currentPage.match(`${page}`)) {
-        //     style = selectedStyle;
-        // } else {
-        //     if (!currentPage.match(`${page}`) && currentPage === '/') {
-        //         style = nonS
-        //     }
-        //     return nonSelectedStyle;
-        // }
     };
 
     const [locationKeys, setLocationKeys] = useState([]);
@@ -61,10 +63,6 @@ const Nav = (props) => {
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [locationKeys]);
-
-    useEffect(() => {
-        console.log(currentPage);
-    }, [currentPage]);
 
     return (
         <nav>

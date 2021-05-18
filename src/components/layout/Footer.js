@@ -1,9 +1,10 @@
 import Subscribe from 'components/layout/Subscribe';
 
 import { StyleContext } from 'components/providers/ThemeProvider';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
+import { doSubscribe } from 'utils/api';
 
 const relativePath = 'src/components/layout/Footer';
 const styledComponentNames = ['FooterContainer'];
@@ -34,9 +35,29 @@ function Footer() {
         }
     }
 
+    const [subState, setSubState] = useState({
+        projects: localStorage.getItem('projects') === 'true',
+        blog: localStorage.getItem('blog') === 'true',
+    });
+    console.log(subState);
+
+    const processSubscription = async (formData) => {
+        const response = await doSubscribe(formData);
+        localStorage.setItem('projects', response.projects?.toString());
+        localStorage.setItem('blog', response.blog?.toString());
+        setSubState({ projects: response.projects, blog: response.blog });
+    };
+
     return (
         <FooterContainer FooterContainer_props={FooterContainer_props}>
-            <Subscribe></Subscribe>
+            {!subState.projects || !subState.blog ? (
+                <Subscribe
+                    subState={subState}
+                    processSubscription={processSubscription}
+                ></Subscribe>
+            ) : (
+                <h4>Thank you for subscribing!</h4>
+            )}
         </FooterContainer>
     );
 }

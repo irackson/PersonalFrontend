@@ -12,20 +12,14 @@ import Projects from 'pages/Projects';
 import Resume from 'pages/Resume';
 import Settings from 'pages/Settings';
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { getAll } from 'utils/api';
 
 export default function Main(props) {
     const [allData, setAllData] = useState({ isLoaded: false });
-    const history = useHistory();
     const getAllData = async () => {
         setAllData({ ...(await getAll()), isLoaded: true });
     };
-
-    useEffect(() => {
-        console.log(history);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [history]);
 
     useEffect(() => {
         getAllData();

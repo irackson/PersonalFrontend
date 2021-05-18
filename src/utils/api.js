@@ -1,8 +1,5 @@
 const apiRoute = process.env.REACT_APP_API_URL;
-//     process.env.NODE_ENV === 'production'
-//         ? process.env.REACT_APP_API_URL
-//         : process.env.REACT_APP_API_URL_DEV;
-console.log(apiRoute);
+
 export const getAll = async () => {
     var myHeaders = new Headers();
 
@@ -118,6 +115,29 @@ export const getBlogBySlug = async (slug) => {
     };
 
     const response = await fetch(`${apiRoute}/blog/${slug}`, requestOptions);
+    const data = await response.json();
+
+    return new Promise(function (myResolve) {
+        myResolve(data);
+    });
+};
+
+export const doSubscribe = async (subscription) => {
+    /* subscription = {
+        first_name: "string", // can be first and last
+        email: "string", required,
+        projects: "on" | null,
+        blog: "on" | null,
+    } */
+    console.log('do', subscription);
+    const response = await fetch(`https://api.ianrackson.com/users/subscribe`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(subscription),
+    });
+
     const data = await response.json();
 
     return new Promise(function (myResolve) {
