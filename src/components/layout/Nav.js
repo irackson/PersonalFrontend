@@ -2,39 +2,33 @@ import { Link, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const onButton = styled.button`
+const OnButton = styled.button`
     background-color: red;
     outline: 1px dashed white;
 `;
 
-const offButton = styled.button`
+const OffButton = styled.button`
     background-color: green;
     outline: 2px solid black;
 `;
-
-const selectedStyle = { backgroundColor: 'red', outline: '1px dashed white' };
-const nonSelectedStyle = {
-    backgroundColor: 'green',
-    outline: '2px solid black',
-};
 
 const Nav = (props) => {
     const history = useHistory(null);
     const [currentPage, setCurrentPage] = useState(history.location.pathname);
 
-    const getStyle = (page) => {
-        let style = {};
+    const isCurrentPage = (page) => {
+        let style = null;
         if (currentPage.match(`${page}`)) {
-            style = selectedStyle;
+            style = true;
         } else {
-            style = nonSelectedStyle;
+            style = false;
         }
         if (
             currentPage.match(`${page}`) &&
             page === '/' &&
             currentPage !== '/'
         ) {
-            style = nonSelectedStyle;
+            style = false;
         }
         return style;
     };
@@ -64,64 +58,30 @@ const Nav = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [locationKeys]);
 
+    const pages = [
+        { dir: '/', name: 'home' },
+        { dir: '/settings', name: 'settings' },
+        { dir: '/blog', name: 'blog' },
+        { dir: '/projects', name: 'projects' },
+        { dir: '/resume', name: 'resume' },
+        { dir: '/about', name: 'about' },
+        { dir: '/metrics', name: 'metrics' },
+    ];
     return (
         <nav>
-            <Link to="/">
-                <button
-                    style={getStyle('/')}
-                    onClick={() => setCurrentPage('/')}
-                >
-                    HOME
-                </button>
-            </Link>
-            <Link to="/settings">
-                <button
-                    style={getStyle('/settings')}
-                    onClick={() => setCurrentPage('/settings')}
-                >
-                    SETTINGS
-                </button>
-            </Link>
-            <Link to="/blog">
-                <button
-                    style={getStyle('/blog')}
-                    onClick={() => setCurrentPage('/blog')}
-                >
-                    BLOG
-                </button>
-            </Link>
-            <Link to="/projects">
-                <button
-                    style={getStyle('/projects')}
-                    onClick={() => setCurrentPage('/projects')}
-                >
-                    PROJECTS
-                </button>
-            </Link>
-            <Link to="/resume">
-                <button
-                    style={getStyle('/resume')}
-                    onClick={() => setCurrentPage('/resume')}
-                >
-                    RESUME
-                </button>
-            </Link>
-            <Link to="/about">
-                <button
-                    style={getStyle('/about')}
-                    onClick={() => setCurrentPage('/about')}
-                >
-                    ABOUT
-                </button>
-            </Link>
-            <Link to="/metrics">
-                <button
-                    style={getStyle('/metrics')}
-                    onClick={() => setCurrentPage('/metrics')}
-                >
-                    METRICS
-                </button>
-            </Link>
+            {pages.map((p) => (
+                <Link to={p.dir}>
+                    {isCurrentPage(p.dir) ? (
+                        <OnButton onClick={() => setCurrentPage(p.dir)}>
+                            {p.name.toUpperCase()}
+                        </OnButton>
+                    ) : (
+                        <OffButton onClick={() => setCurrentPage(p.dir)}>
+                            {p.name.toLowerCase()}
+                        </OffButton>
+                    )}
+                </Link>
+            ))}
         </nav>
     );
 };
