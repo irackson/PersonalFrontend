@@ -1,7 +1,7 @@
 import Subscribe from 'components/layout/Subscribe';
 
 import { StyleContext } from 'components/providers/ThemeProvider';
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
 import { doSubscribe } from 'utils/api';
@@ -39,7 +39,6 @@ function Footer() {
         projects: localStorage.getItem('projects') === 'true',
         blog: localStorage.getItem('blog') === 'true',
     });
-    console.log(subState);
 
     const processSubscription = async (formData) => {
         const response = await doSubscribe(formData);

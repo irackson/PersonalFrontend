@@ -7,7 +7,6 @@ const Subscribe = (props) => {
         projects: props.subState.projects,
         blog: props.subState.blog,
     });
-    console.log(subForm);
     const handleChange = (event) => {
         const updatedSubForm = { ...subForm };
         if (event.target.type === 'checkbox') {

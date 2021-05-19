@@ -33,7 +33,6 @@ const styleSeed = [
             },
         ],
     },
-
     {
         path: 'src/components/layout/Header',
         customizableComponents: [
@@ -50,6 +49,49 @@ const styleSeed = [
                 },
                 'background-color': {
                     default: 'transparent',
+                },
+            },
+        ],
+    },
+    {
+        path: 'src/components/layout/Nav',
+        customizableComponents: [
+            {
+                name: 'ActiveNavButton',
+                background: {
+                    default: 'rgb(216, 215, 163)',
+                    light: 'rgb(237, 237, 237)',
+                    dark: 'rgb(34, 34, 34)',
+                    fun: 'rgb(228, 120, 213)',
+                    minimal: 'white',
+                },
+                color: {
+                    default: 'rgba(68, 68, 68, 0.74)',
+                    light: 'rgba(34, 34, 34, 0.904)',
+                    dark: 'rgb(237, 237, 237)',
+                    fun: 'rgb(60, 206, 79)',
+                },
+                outline: {
+                    default: '1px solid rgb(161, 105, 105)',
+                    light: '1px solid rgb(119, 50, 50)',
+                    dark: '1px solid rgb(243, 226, 226)',
+                    fun: '2px dashed rgb(58, 114, 88)',
+                },
+            },
+            {
+                name: 'InactiveNavButton',
+                background: {
+                    default: 'rgb(116, 115, 163)',
+                    light: 'rgb(137, 137, 137)',
+                    dark: 'rgb(0, 34, 34)',
+                    fun: 'rgb(128, 20, 113)',
+                    minimal: 'lemonchiffon',
+                },
+                color: {
+                    default: 'rgba(168, 168, 168, 0.74)',
+                    light: 'rgba(211, 205, 205, 0.904)',
+                    dark: 'rgb(137, 137, 137)',
+                    fun: 'rgb(160, 106, 179)',
                 },
             },
         ],

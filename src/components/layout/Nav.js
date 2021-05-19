@@ -1,18 +1,44 @@
 import { Link, useHistory } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { StyleContext } from 'components/providers/ThemeProvider';
 import styled from 'styled-components';
+import { getStyledCommands } from 'utils/theme-helper';
 
-const OnButton = styled.button`
-    background-color: red;
-    outline: 1px dashed white;
-`;
+const relativePath = 'src/components/layout/Nav';
+const styledComponentNames = ['ActiveNavButton', 'InactiveNavButton'];
 
-const OffButton = styled.button`
-    background-color: green;
-    outline: 2px solid black;
+const ActiveNavButton = styled.button`
+    background: ${(props) => props.ActiveNavButton_props['background']};
+    color: ${(props) => props.ActiveNavButton_props['color']};
+    outline: ${(props) => props.ActiveNavButton_props['outline']};
+    min-width: 9ch;
 `;
+const ActiveNavButton_props = {};
+
+const InactiveNavButton = styled.button`
+    background: ${(props) => props.InactiveNavButton_props['background']};
+    color: ${(props) => props.InactiveNavButton_props['color']};
+    min-width: 9ch;
+`;
+const InactiveNavButton_props = {};
 
 const Nav = (props) => {
+    const { styles, themes } = useContext(StyleContext);
+    const styledCommands = getStyledCommands(
+        styles,
+        themes.currentTheme,
+        styledComponentNames,
+        relativePath
+    );
+    for (let i = 0; i < styledCommands.length; i++) {
+        try {
+            // eslint-disable-next-line no-eval
+            eval(styledCommands[i]);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
     const history = useHistory(null);
     const [currentPage, setCurrentPage] = useState(history.location.pathname);
 
@@ -70,15 +96,21 @@ const Nav = (props) => {
     return (
         <nav>
             {pages.map((p) => (
-                <Link to={p.dir}>
+                <Link to={p.dir} key={p.dir}>
                     {isCurrentPage(p.dir) ? (
-                        <OnButton onClick={() => setCurrentPage(p.dir)}>
+                        <ActiveNavButton
+                            ActiveNavButton_props={ActiveNavButton_props}
+                            onClick={() => setCurrentPage(p.dir)}
+                        >
                             {p.name.toUpperCase()}
-                        </OnButton>
+                        </ActiveNavButton>
                     ) : (
-                        <OffButton onClick={() => setCurrentPage(p.dir)}>
+                        <InactiveNavButton
+                            InactiveNavButton_props={InactiveNavButton_props}
+                            onClick={() => setCurrentPage(p.dir)}
+                        >
                             {p.name.toLowerCase()}
-                        </OffButton>
+                        </InactiveNavButton>
                     )}
                 </Link>
             ))}
