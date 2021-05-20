@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 
 const Blog = (props) => {
+    useEffect(() => {
+        document.title = 'Ian Rackson | Blog';
+    }, []);
+
     const loaded = () => {
         return (
             <>

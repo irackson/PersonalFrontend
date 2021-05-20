@@ -4,6 +4,9 @@ import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Settings(props) {
+    useEffect(() => {
+        document.title = 'Ian Rackson | Theme';
+    }, []);
     const { styles, themes, updateThemeSelection } = useContext(StyleContext);
     return (
         <>

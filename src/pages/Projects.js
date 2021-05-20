@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 
 const Project = (props) => {
+    useEffect(() => {
+        document.title = 'Ian Rackson | Projects';
+    }, []);
     const loaded = () => {
         return (
             <>

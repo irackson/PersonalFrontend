@@ -16,6 +16,10 @@ const Faq = styled.section`
 `;
 
 const About = (props) => {
+    useEffect(() => {
+        document.title = 'Ian Rackson | About';
+    }, []);
+
     const loaded = () => {
         return (
             <Div>

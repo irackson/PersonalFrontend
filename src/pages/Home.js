@@ -21,6 +21,9 @@ const Section = styled.section`
 `;
 
 const Home = (props) => {
+    useEffect(() => {
+        document.title = 'Ian Rackson | Landing';
+    }, []);
     const loaded = () => {
         return (
             <Section>

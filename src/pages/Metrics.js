@@ -3,6 +3,10 @@ import GitHubCalendar from 'github-calendar';
 import { useState, useEffect } from 'react';
 
 const Metrics = (props) => {
+    useEffect(() => {
+        document.title = 'Ian Rackson | Metrics';
+    }, []);
+
     const [cal, setCal] = useState(null);
 
     const getCal = () => {

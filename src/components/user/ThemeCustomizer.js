@@ -54,7 +54,7 @@ function ThemeCustomizer(props) {
 
     const onSubmit = (data) => {
         updateStyleFromForm(data);
-        formReset();
+        // formReset();
     };
     const [stylesWithSyntax, setStylesWithSyntax] = useState(styles);
     const handleChange = (event) => {

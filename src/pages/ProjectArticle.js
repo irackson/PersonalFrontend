@@ -1,7 +1,22 @@
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import Markdown from 'components/Markdown';
+import { useEffect } from 'react';
 const ProjectArticle = (props) => {
+    const setDocumentTitle = () => {
+        const docTitle = props.isLoaded
+            ? props.projects.filter(
+                  (e) => e.slug === props.match.params.slug
+              )[0].title
+            : 'loading project post...';
+        document.title = docTitle;
+    };
+
+    useEffect(() => {
+        setDocumentTitle();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.isLoaded]);
+
     const loaded = () => {
         const project = props.projects.filter(
             (e) => e.slug === props.match.params.slug
