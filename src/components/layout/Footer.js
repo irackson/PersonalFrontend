@@ -1,4 +1,5 @@
 import Subscribe from 'components/layout/Subscribe';
+import Social from 'components/Social';
 
 import { StyleContext } from 'components/providers/ThemeProvider';
 import { useContext, useState } from 'react';
@@ -15,6 +16,9 @@ const FooterContainer = styled.footer`
     font-size: ${(props) => props.FooterContainer_props['font-size']};
     background-color: ${(props) =>
         props.FooterContainer_props['background-color']};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 const FooterContainer_props = {};
 
@@ -57,6 +61,7 @@ function Footer() {
             ) : (
                 <h4>Thank you for subscribing!</h4>
             )}
+            <Social></Social>
         </FooterContainer>
     );
 }

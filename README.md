@@ -1,44 +1,18 @@
-[![wakatime](https://wakatime.com/badge/github/irackson/PersonalFrontend.svg)](https://wakatime.com/badge/github/irackson/PersonalFrontend)[![Netlify Status](https://api.netlify.com/api/v1/badges/de157e9e-6259-4033-8d07-f03a2f592f0f/deploy-status)](https://app.netlify.com/sites/epic-stonebraker-4f69d2/deploys)
+# Ian Rackson Personal Website Frontend [![wakatime](https://wakatime.com/badge/github/irackson/PersonalFrontend.svg)](https://wakatime.com/badge/github/irackson/PersonalFrontend)[![Netlify Status](https://api.netlify.com/api/v1/badges/de157e9e-6259-4033-8d07-f03a2f592f0f/deploy-status)](https://app.netlify.com/sites/epic-stonebraker-4f69d2/deploys)
 
-# Getting Started with Create React App
+## [Live Link](https://ianrackson.com/)
 
 ### TODO
 
--   non visible routes should have links, but also shouldn't work if you just type the - url
--   figure out themed styling for nav links on given page
+### icebucket
+
 -   nav bar collape on mobile, expand on desktop
--   theme selector always collapes, with
--   cache api requests so data is only fetched once even if user navigates away and then back (<https://www.smashingmagazine.com/2020/07/custom-react-hook-fetch-cache-data/>) (<https://github.com/ooade/use-fetch-hook/tree/master/src>)
--   cors
--   router reload issue
+-   theme selector always collapes, with current theme displayed
 
-Components:
+### bugs
 
-Layout
-
--   PageName H1
--   Hyperlink.js
-
-mkdir Article (pass in type blog or project (or post.liveLink?))
-
--   Title.js
--   Description.js
--   Link.js (live, repo)
--   Markdown
--   Thumbnail.js
--   CreatedDate.js
--   UpdatedDate.js
-
-mkdir Featured (pass in type blog or project (or post.liveLink?))
-
--
-
-mkdir Social
-
--   Media Icons
--   Resume download Icon
-
-mkdir Business Card
-
--   Front.js
--   Back.js
+-   Map.js: "27[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See [URL](https://www.chromestatus.com/feature/5745543795965952)"
+-   MapLoader.js after flipping card a few times: "Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+    at MapLoader (<http://localhost:3000/static/js/main.chunk.js:2715:81>)
+    at div
+    at Back"

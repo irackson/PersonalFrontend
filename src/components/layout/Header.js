@@ -47,8 +47,6 @@ function Header() {
                 <Nav></Nav>
                 <ThemeApplicator></ThemeApplicator>
             </FlexBetween>
-
-            <h1>IAN RACKSON WEB DEV</h1>
         </HeaderContainer>
     );
 }
