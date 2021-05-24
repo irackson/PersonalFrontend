@@ -12,8 +12,9 @@ const BusinessCard = (props) => {
 
     return (
         <div
-            onMouseEnter={(e) => toggleCard(e)}
-            onMouseLeave={(e) => toggleCard(e)}
+        //! Disable until styling
+        // onMouseEnter={(e) => toggleCard(e)}
+        // onMouseLeave={(e) => toggleCard(e)}
         >
             {flipToggle ? <Back></Back> : <Front></Front>}
         </div>

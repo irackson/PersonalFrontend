@@ -1,11 +1,11 @@
 import Subscribe from 'components/layout/Subscribe';
-import Social from 'components/Social';
-
 import { StyleContext } from 'components/providers/ThemeProvider';
+import Social from 'components/Social';
+import ThemeApplicator from 'components/user/ThemeApplicator';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
-import { getStyledCommands } from 'utils/theme-helper';
 import { doSubscribe } from 'utils/api';
+import { getStyledCommands } from 'utils/theme-helper';
 
 const relativePath = 'src/components/layout/Footer';
 const styledComponentNames = ['FooterContainer'];
@@ -61,6 +61,8 @@ function Footer() {
             ) : (
                 <h4>Thank you for subscribing!</h4>
             )}
+            <ThemeApplicator></ThemeApplicator>
+
             <Social></Social>
         </FooterContainer>
     );

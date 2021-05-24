@@ -84,14 +84,15 @@ const Nav = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [locationKeys]);
 
+    // const homePage = { dir: '/', name: 'home' };
     const pages = [
         { dir: '/', name: 'home' },
-        { dir: '/settings', name: 'settings' },
-        { dir: '/blog', name: 'blog' },
-        { dir: '/projects', name: 'projects' },
-        { dir: '/resume', name: 'resume' },
-        { dir: '/about', name: 'about' },
-        { dir: '/metrics', name: 'metrics' },
+        { dir: '/about', name: 'about', className: 'fas fa-info-circle' },
+        { dir: '/resume', name: 'resume', className: 'fas fa-file' },
+        { dir: '/projects', name: 'projects', className: 'fas fa-briefcase' },
+        { dir: '/blog', name: 'blog', className: 'fas fa-blog' },
+        { dir: '/metrics', name: 'metrics', className: 'fas fa-chart-line' },
+        { dir: '/settings', name: 'settings', className: 'fas fa-palette' },
     ];
     return (
         <nav>

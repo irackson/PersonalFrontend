@@ -3,7 +3,6 @@ import { StyleContext } from 'components/providers/ThemeProvider';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
-import ThemeApplicator from 'components/user/ThemeApplicator';
 import Nav from './Nav';
 
 const relativePath = 'src/components/layout/Header';
@@ -19,9 +18,9 @@ const HeaderContainer = styled.header`
 const HeaderContainer_props = {};
 
 const FlexBetween = styled.div`
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
 `;
 
 function Header() {
@@ -45,7 +44,6 @@ function Header() {
         <HeaderContainer HeaderContainer_props={HeaderContainer_props}>
             <FlexBetween>
                 <Nav></Nav>
-                <ThemeApplicator></ThemeApplicator>
             </FlexBetween>
         </HeaderContainer>
     );
