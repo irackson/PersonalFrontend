@@ -5,23 +5,6 @@
     --input-focus-l: 42%;
 }
 
-.App {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
-/* header {
-    border: 10px solid blue !important;
-}
-main {
-    border: 10px solid green !important;
-}
-
-footer {
-    border: 10px solid orange !important;
-} */
-
 //* ___      __   __   __   __        __
 //*  |  \ / |__) /  \ / _` |__)  /\  |__) |__| \ /
 //*  |   |  |    \__/ \__> |  \ /~~\ |    |  |  |
@@ -164,4 +147,15 @@ body {
     font-size: $type-base-size;
     // line-height: 1.25;
     font-family: $text-font-stack;
+}
+
+header {
+    outline: 1px solid blue !important;
+}
+main {
+    outline: 1px solid green !important;
+}
+
+footer {
+    outline: 1px solid orange !important;
 }

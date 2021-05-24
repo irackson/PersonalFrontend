@@ -42,9 +42,11 @@ function Header() {
 
     return (
         <HeaderContainer HeaderContainer_props={HeaderContainer_props}>
-            <FlexBetween>
-                <Nav></Nav>
-            </FlexBetween>
+            <div style={{ display: 'none' }}>
+                <FlexBetween>
+                    <Nav></Nav>
+                </FlexBetween>
+            </div>
         </HeaderContainer>
     );
 }
