@@ -95,6 +95,23 @@ const styleSeed = [
                     fun: 'rgb(160, 106, 179)',
                 },
             },
+            {
+                name: 'PageNav',
+                background: {
+                    default: 'linear-gradient(to right,#99ff71, #526181)',
+                    light: 'linear-gradient(to right,#2c276b, rgb(160, 106, 179))',
+                    dark: 'linear-gradient(to right,#47643c, #526181)',
+                    fun: 'linear-gradient(to right,#f71070, rgb(160, 106, 179))',
+                    minimal:
+                        'linear-gradient(to right,#384e2f, rgb(243, 226, 226))',
+                },
+                opacity: {
+                    default: '0.7',
+                    light: '0.2',
+                    dark: '1',
+                    fun: '0.9',
+                },
+            },
         ],
     },
     {

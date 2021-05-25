@@ -5,7 +5,11 @@ import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
 const relativePath = 'src/components/layout/Nav';
-const styledComponentNames = ['ActiveNavButton', 'InactiveNavButton'];
+const styledComponentNames = [
+    'ActiveNavButton',
+    'InactiveNavButton',
+    'PageNav',
+];
 
 const ActiveNavButton = styled.button`
     background: ${(props) => props.ActiveNavButton_props['background']};
@@ -21,6 +25,21 @@ const InactiveNavButton = styled.button`
     border-radius: 50%;
 `;
 const InactiveNavButton_props = {};
+
+const PageNav = styled.nav`
+    /* background: ${(props) =>
+        !props.PageNav_props['clickToggle']
+            ? props.PageNav_props['background']
+            : ''}; */
+    .circle-nav-panel {
+        background: ${(props) => props.PageNav_props['background']};
+    }
+
+    &.circle-nav-open {
+        opacity: ${(props) => props.PageNav_props['opacity']};
+    }
+`;
+const PageNav_props = {};
 
 const Nav = (props) => {
     const [clickToggle, setClickToggle] = useState(false);
@@ -104,7 +123,8 @@ const Nav = (props) => {
     ];
     return (
         <div className="circle-nav-overlay">
-            <nav
+            <PageNav
+                PageNav_props={PageNav_props}
                 id="circle-nav-wrapper"
                 className={`circle-nav-wrapper ${
                     clickToggle ? 'circle-nav-open' : ''
@@ -165,7 +185,7 @@ const Nav = (props) => {
                         </li>
                     ))}
                 </ul>
-            </nav>
+            </PageNav>
         </div>
     );
 };

@@ -67,11 +67,11 @@ $circle-nav-item-bg: #fff;
 
         // Background panel
         .circle-nav-panel {
-            background: linear-gradient(
-                to right,
-                $circle-nav-panel-gradient-top,
-                $circle-nav-panel-gradient-bottom
-            );
+            // background: linear-gradient(
+            //     to right,
+            //     $circle-nav-panel-gradient-top,
+            //     $circle-nav-panel-gradient-bottom
+            // );
             width: 0;
             height: 0;
             border-radius: 50%;
@@ -83,7 +83,7 @@ $circle-nav-item-bg: #fff;
             &.circle-nav-open {
                 width: $circle-nav-panel-width;
                 height: $circle-nav-panel-height;
-                opacity: 0.7;
+                // opacity: 0.7;
                 box-shadow: -5px 6px 0 6px rgba(255, 95, 109, 0.33);
             }
         }

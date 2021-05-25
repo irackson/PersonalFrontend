@@ -53,7 +53,7 @@ function Footer() {
 
     return (
         <FooterContainer FooterContainer_props={FooterContainer_props}>
-            <div style={{ display: 'none' }}>
+            <div>
                 {!subState.projects || !subState.blog ? (
                     <Subscribe
                         subState={subState}
