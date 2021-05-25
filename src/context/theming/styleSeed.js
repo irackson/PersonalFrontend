@@ -26,7 +26,8 @@ const styleSeed = [
                     minimal: 'white',
                 },
                 padding: {
-                    default: '0.5rem 0.25rem 0.25rem 0.5rem',
+                    // default: '0.5rem 0.25rem 0.25rem 0.5rem',
+                    default: '0',
                     fun: '1rem 0.5rem 0.5rem 1rem',
                     minimal: 0,
                 },
@@ -42,7 +43,7 @@ const styleSeed = [
                     default: '0px',
                 },
                 border: {
-                    default: '2px solid transparent',
+                    default: '0px solid transparent',
                 },
                 'font-size': {
                     default: '32px',
@@ -59,7 +60,7 @@ const styleSeed = [
             {
                 name: 'ActiveNavButton',
                 background: {
-                    default: 'rgb(216, 215, 163)',
+                    default: 'rgb(175, 173, 38)',
                     light: 'rgb(237, 237, 237)',
                     dark: 'rgb(34, 34, 34)',
                     fun: 'rgb(228, 120, 213)',
@@ -70,12 +71,6 @@ const styleSeed = [
                     light: 'rgba(34, 34, 34, 0.904)',
                     dark: 'rgb(237, 237, 237)',
                     fun: 'rgb(60, 206, 79)',
-                },
-                outline: {
-                    default: '1px solid rgb(161, 105, 105)',
-                    light: '1px solid rgb(119, 50, 50)',
-                    dark: '1px solid rgb(243, 226, 226)',
-                    fun: '2px dashed rgb(58, 114, 88)',
                 },
             },
             {
@@ -92,6 +87,23 @@ const styleSeed = [
                     light: 'rgba(211, 205, 205, 0.904)',
                     dark: 'rgb(137, 137, 137)',
                     fun: 'rgb(160, 106, 179)',
+                },
+            },
+            {
+                name: 'PageNav',
+                background: {
+                    default: 'linear-gradient(to right,#99ff71, #526181)',
+                    light: 'linear-gradient(to right,#2c276b, rgb(160, 106, 179))',
+                    dark: 'linear-gradient(to right,#47643c, #526181)',
+                    fun: 'linear-gradient(to right,#f71070, rgb(160, 106, 179))',
+                    minimal:
+                        'linear-gradient(to right,#384e2f, rgb(243, 226, 226))',
+                },
+                opacity: {
+                    default: '0.7',
+                    light: '0.2',
+                    dark: '1',
+                    fun: '0.9',
                 },
             },
         ],

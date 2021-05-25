@@ -13,6 +13,9 @@ const GlobalContainer = styled.div`
     color: ${(props) => props.GlobalContainer_props['color']};
     background: ${(props) => props.GlobalContainer_props['background']};
     padding: ${(props) => props.GlobalContainer_props['padding']};
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 `;
 const GlobalContainer_props = {};
 
@@ -34,10 +37,7 @@ function GlobalStyle(props) {
     }
 
     return (
-        <GlobalContainer
-            className="App"
-            GlobalContainer_props={GlobalContainer_props}
-        >
+        <GlobalContainer GlobalContainer_props={GlobalContainer_props}>
             {props.children}
         </GlobalContainer>
     );

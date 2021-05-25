@@ -1,0 +1,299 @@
+$cubic-bezier: cubic-bezier(0, 1.16, 1, 1);
+
+$breakpoint: 769px;
+$breakpoint-min: 768px;
+
+$desktop-nav-width: 1200px;
+$font-family: 'Open Sans', sans-serif;
+$circle-nav-toggle-color: #191919;
+$circle-nav-toggle-weight: 30px;
+$circle-nav-toggle-height: 30px;
+
+$circle-nav-panel-gradient-bottom: #ffc371;
+$circle-nav-panel-gradient-top: #ff5f6d;
+$circle-nav-panel-width: 450px;
+$circle-nav-panel-height: 450px;
+
+$circle-nav-item-bg: #fff;
+
+@media (max-width: $breakpoint-min) {
+    $show-icon: true;
+    $show-text: false;
+    .circle-nav-wrapper {
+        position: absolute;
+        z-index: 9999999;
+        right: 0px;
+        top: 0px;
+        width: $circle-nav-panel-width/2;
+        height: $circle-nav-panel-height/2;
+        overflow: hidden;
+
+        // Toggle button
+        .circle-nav-toggle {
+            position: absolute;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            z-index: 999999;
+            width: $circle-nav-toggle-weight;
+            height: $circle-nav-toggle-height;
+            border: 2px solid $circle-nav-toggle-color;
+            transition: transform 0.2s cubic-bezier(0, 1.16, 1, 1);
+            right: 10px;
+            top: 10px;
+
+            i.material-icons {
+                color: $circle-nav-toggle-color;
+            }
+
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+
+            // Navigation open
+            &.circle-nav-open {
+                border: 2px solid #fff;
+                transform: rotate(135deg);
+
+                i.material-icons {
+                    color: #fff;
+                }
+            }
+        }
+
+        // Background panel
+        .circle-nav-panel {
+            // background: linear-gradient(
+            //     to right,
+            //     $circle-nav-panel-gradient-top,
+            //     $circle-nav-panel-gradient-bottom
+            // );
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            transform: translate(-50%, -52.5%);
+            transition: width 0.2s $cubic-bezier, height 0.2s $cubic-bezier;
+            margin-left: $circle-nav-panel-width/2 + 12; // 12 to avoid cropping the shadow
+
+            // Navigation open
+            &.circle-nav-open {
+                width: $circle-nav-panel-width;
+                height: $circle-nav-panel-height;
+                // opacity: 0.7;
+                box-shadow: -5px 6px 0 6px rgba(255, 95, 109, 0.33);
+            }
+        }
+
+        // Navigation items
+        .circle-nav-menu {
+            width: $circle-nav-panel-width/2;
+            height: $circle-nav-panel-height/2;
+
+            .circle-nav-item {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $circle-nav-item-bg;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                visibility: hidden;
+                transform: rotate(-115deg);
+                transition: bottom 0.2s $cubic-bezier, left 0.2s $cubic-bezier,
+                    width 0.2s $cubic-bezier, height 0.2s $cubic-bezier;
+
+                // Place the icons in the center of the panel before start transition
+                &-1,
+                &-2,
+                &-3,
+                &-4,
+                &-5 {
+                    left: $circle-nav-panel-width/2;
+                    bottom: $circle-nav-panel-width/2;
+                }
+
+                i {
+                    color: $circle-nav-panel-gradient-top;
+                    font-size: 0.1em;
+                    transition: all 1s $cubic-bezier;
+                }
+
+                // Show icon?
+                @if $show-icon == true {
+                    i {
+                        display: block;
+                    }
+                } @else {
+                    i {
+                        display: none;
+                    }
+                }
+
+                // Show text?
+                @if $show-text == true {
+                    span {
+                        display: inline;
+                        font-size: 0.7rem;
+                    }
+                } @else {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            &.circle-nav-open {
+                .circle-nav-item {
+                    width: 40px;
+                    height: 40px;
+                    visibility: visible;
+                    transform: rotate(0deg);
+                    transition: bottom 0.3s $cubic-bezier,
+                        left 0.3s $cubic-bezier, width 0.5s $cubic-bezier,
+                        height 0.5s $cubic-bezier, transform 0.8s $cubic-bezier;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.8;
+                    }
+
+                    i {
+                        font-size: 1.3em;
+                        transition: all 1s $cubic-bezier;
+                    }
+
+                    &.circle-nav-item-1 {
+                        bottom: 80%;
+                        left: 12%;
+                        transition-delay: 0.1s;
+                    }
+
+                    &.circle-nav-item-2 {
+                        bottom: 57%;
+                        left: 20%;
+                        transition-delay: 0.2s;
+                    }
+
+                    &.circle-nav-item-3 {
+                        bottom: 36%;
+                        left: 34%;
+                        transition-delay: 0.3s;
+                    }
+
+                    &.circle-nav-item-4 {
+                        bottom: 21.5%;
+                        left: 52.8%;
+                        transition-delay: 0.4s;
+                    }
+
+                    &.circle-nav-item-5 {
+                        bottom: 12%;
+                        left: 74.8%;
+                        transition-delay: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint) {
+    $show-icon: false;
+    $show-text: true;
+
+    .circle-nav-wrapper {
+        position: relative;
+        width: auto;
+        // height: 50px;
+        // line-height: 50px;
+        overflow: auto;
+        // background: linear-gradient(
+        //     to right,
+        //     $circle-nav-panel-gradient-top,
+        //     $circle-nav-panel-gradient-bottom
+        // );
+        // margin-top: 40px;
+
+        .circle-nav-toggle {
+            display: none;
+        }
+
+        .circle-nav-panel {
+            width: auto;
+            max-width: auto;
+            height: auto;
+            box-shadow: none;
+        }
+        ul.circle-nav-menu {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
+        .circle-nav-menu {
+            width: $desktop-nav-width;
+            max-width: 90vw;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-around;
+
+            .circle-nav-item {
+                position: relative;
+                visibility: visible;
+                color: #fff;
+                transition: color 0.2s ease-out;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #000;
+                }
+
+                &-1,
+                &-2,
+                &-3,
+                &-4,
+                &-5 {
+                    left: auto;
+                    bottom: auto;
+                    display: flex;
+                    align-items: center;
+                    .material-icons {
+                        font-size: 1em;
+                        margin-right: 8px;
+                    }
+
+                    // Show icon?
+                    @if $show-icon == true {
+                        .material-icons {
+                            display: block;
+                        }
+                    } @else {
+                        .material-icons {
+                            display: none;
+                        }
+                    }
+
+                    // Show text?
+                    @if $show-text == true {
+                        span {
+                            display: inline;
+                            font-size: 0.8em;
+                            text-transform: uppercase;
+                            // font-family: $font-family;
+                        }
+                    } @else {
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

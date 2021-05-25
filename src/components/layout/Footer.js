@@ -53,17 +53,18 @@ function Footer() {
 
     return (
         <FooterContainer FooterContainer_props={FooterContainer_props}>
-            {!subState.projects || !subState.blog ? (
-                <Subscribe
-                    subState={subState}
-                    processSubscription={processSubscription}
-                ></Subscribe>
-            ) : (
-                <h4>Thank you for subscribing!</h4>
-            )}
-            <ThemeApplicator></ThemeApplicator>
-
-            <Social></Social>
+            <div>
+                {!subState.projects || !subState.blog ? (
+                    <Subscribe
+                        subState={subState}
+                        processSubscription={processSubscription}
+                    ></Subscribe>
+                ) : (
+                    <h4>Thank you for subscribing!</h4>
+                )}
+                <ThemeApplicator></ThemeApplicator>
+                <Social></Social>
+            </div>
         </FooterContainer>
     );
 }
