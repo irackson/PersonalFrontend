@@ -26,7 +26,8 @@ const styleSeed = [
                     minimal: 'white',
                 },
                 padding: {
-                    default: '0.5rem 0.25rem 0.25rem 0.5rem',
+                    // default: '0.5rem 0.25rem 0.25rem 0.5rem',
+                    default: '0',
                     fun: '1rem 0.5rem 0.5rem 1rem',
                     minimal: 0,
                 },
@@ -59,7 +60,7 @@ const styleSeed = [
             {
                 name: 'ActiveNavButton',
                 background: {
-                    default: 'rgb(216, 215, 163)',
+                    default: 'rgb(175, 173, 38)',
                     light: 'rgb(237, 237, 237)',
                     dark: 'rgb(34, 34, 34)',
                     fun: 'rgb(228, 120, 213)',

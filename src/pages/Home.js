@@ -8,7 +8,8 @@ const Section = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-width: 30ch;
+    /* min-width: 30ch; */
+    background: lightblue;
 
     ul {
         list-style: none;
@@ -25,7 +26,7 @@ const Home = (props) => {
     }, []);
     const loaded = () => {
         return (
-            <Section>
+            <div>
                 <ul>
                     <li>
                         Featured Project:
@@ -46,23 +47,26 @@ const Home = (props) => {
                         ) : null}
                     </li>
                 </ul>
-            </Section>
+            </div>
         );
     };
 
     const loading = () => {
         return (
-            <Section>
-                <BusinessCard></BusinessCard>
-            </Section>
+            <div>
+                <ul>
+                    <li>Featured Project:</li>
+                    <li>Featured Blog:</li>
+                </ul>
+            </div>
         );
     };
 
     return (
-        <div>
-            {loading()}
-            {props.isLoaded ? loaded() : null}
-        </div>
+        <Section>
+            <BusinessCard></BusinessCard>
+            {props.isLoaded ? loaded() : loading()}
+        </Section>
     );
 };
 

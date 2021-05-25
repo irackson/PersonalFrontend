@@ -1,9 +1,8 @@
 import { StyleContext } from 'components/providers/ThemeProvider';
-
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
-import Nav from './Nav';
+import Nav from './navigation/Nav';
 
 const relativePath = 'src/components/layout/Header';
 const styledComponentNames = ['HeaderContainer'];
@@ -42,7 +41,7 @@ function Header() {
 
     return (
         <HeaderContainer HeaderContainer_props={HeaderContainer_props}>
-            <div style={{ display: 'none' }}>
+            <div>
                 <FlexBetween>
                     <Nav></Nav>
                 </FlexBetween>
