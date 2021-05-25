@@ -210,15 +210,15 @@ $circle-nav-item-bg: #fff;
     .circle-nav-wrapper {
         position: relative;
         width: auto;
-        height: 50px;
-        line-height: 50px;
+        // height: 50px;
+        // line-height: 50px;
         overflow: auto;
-        background: linear-gradient(
-            to right,
-            $circle-nav-panel-gradient-top,
-            $circle-nav-panel-gradient-bottom
-        );
-        margin-top: 40px;
+        // background: linear-gradient(
+        //     to right,
+        //     $circle-nav-panel-gradient-top,
+        //     $circle-nav-panel-gradient-bottom
+        // );
+        // margin-top: 40px;
 
         .circle-nav-toggle {
             display: none;
@@ -233,7 +233,7 @@ $circle-nav-item-bg: #fff;
 
         .circle-nav-menu {
             width: $desktop-nav-width;
-            max-width: 100%;
+            max-width: 90vw;
             height: auto;
             margin-left: auto;
             margin-right: auto;

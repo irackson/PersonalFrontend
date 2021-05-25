@@ -14,7 +14,6 @@ const styledComponentNames = [
 const ActiveNavButton = styled.button`
     background: ${(props) => props.ActiveNavButton_props['background']};
     color: ${(props) => props.ActiveNavButton_props['color']};
-    /* outline: ${(props) => props.ActiveNavButton_props['outline']}; */
     border-radius: 50%;
 `;
 const ActiveNavButton_props = {};
@@ -27,12 +26,14 @@ const InactiveNavButton = styled.button`
 const InactiveNavButton_props = {};
 
 const PageNav = styled.nav`
-    /* background: ${(props) =>
-        !props.PageNav_props['clickToggle']
-            ? props.PageNav_props['background']
-            : ''}; */
     .circle-nav-panel {
         background: ${(props) => props.PageNav_props['background']};
+    }
+
+    @media (min-width: 769px) {
+        &.circle-nav-wrapper {
+            background: ${(props) => props.PageNav_props['background']};
+        }
     }
 
     &.circle-nav-open {

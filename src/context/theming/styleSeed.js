@@ -43,7 +43,7 @@ const styleSeed = [
                     default: '0px',
                 },
                 border: {
-                    default: '2px solid transparent',
+                    default: '0px solid transparent',
                 },
                 'font-size': {
                     default: '32px',
@@ -71,12 +71,6 @@ const styleSeed = [
                     light: 'rgba(34, 34, 34, 0.904)',
                     dark: 'rgb(237, 237, 237)',
                     fun: 'rgb(60, 206, 79)',
-                },
-                outline: {
-                    default: '1px solid rgb(161, 105, 105)',
-                    light: '1px solid rgb(119, 50, 50)',
-                    dark: '1px solid rgb(243, 226, 226)',
-                    fun: '2px dashed rgb(58, 114, 88)',
                 },
             },
             {
