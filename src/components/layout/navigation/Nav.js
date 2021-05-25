@@ -15,6 +15,10 @@ const ActiveNavButton = styled.button`
     background: ${(props) => props.ActiveNavButton_props['background']};
     color: ${(props) => props.ActiveNavButton_props['color']};
     border-radius: 50%;
+    @media (min-width: 769px) {
+        border-radius: 5%;
+        width: 6ch;
+    }
 `;
 const ActiveNavButton_props = {};
 
@@ -22,6 +26,10 @@ const InactiveNavButton = styled.button`
     background: ${(props) => props.InactiveNavButton_props['background']};
     color: ${(props) => props.InactiveNavButton_props['color']};
     border-radius: 50%;
+    @media (min-width: 769px) {
+        border-radius: 5%;
+        width: 6ch;
+    }
 `;
 const InactiveNavButton_props = {};
 
@@ -117,9 +125,9 @@ const Nav = (props) => {
         { dir: '/', name: 'home', className: 'fas fa-home' },
         { dir: '/about', name: 'about', className: 'fas fa-info-circle' },
         // { dir: '/resume', name: 'resume', className: 'fas fa-file' },
-        { dir: '/projects', name: 'projects', className: 'fas fa-briefcase' },
+        { dir: '/projects', name: 'apps', className: 'fas fa-briefcase' },
         { dir: '/blog', name: 'blog', className: 'fas fa-blog' },
-        { dir: '/metrics', name: 'metrics', className: 'fas fa-chart-line' },
+        { dir: '/metrics', name: 'stats', className: 'fas fa-chart-line' },
         // { dir: '/settings', name: 'settings', className: 'fas fa-palette' },
     ];
     return (
@@ -167,7 +175,7 @@ const Nav = (props) => {
                                         <i
                                             className={`${p.className} material-icons`}
                                         ></i>
-                                        {/* {p.name.toUpperCase()} */}
+                                        <span>{p.name}</span>
                                     </ActiveNavButton>
                                 ) : (
                                     <InactiveNavButton
@@ -179,7 +187,7 @@ const Nav = (props) => {
                                         <i
                                             className={`${p.className} material-icons`}
                                         ></i>
-                                        {/* {p.name.toLowerCase()} */}
+                                        <span>{p.name}</span>
                                     </InactiveNavButton>
                                 )}
                             </Link>

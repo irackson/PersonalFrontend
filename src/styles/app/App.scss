@@ -108,7 +108,7 @@ $level-size: $type-base-size;
             $fluid-min: if($fluid-min > $type-base-size, $fluid-min, 1);
 
             // Adjust max modifier slightly per level to prevent "same" size
-            // or lower levels appaering larger than higher levels
+            // or lower levels appearing larger than higher levels
             // 4vw was selected by testing from $type-ratios map, YMMV 🙃
             $fluid-scaler: ($level-unitless - $fluid-min) + 4vw;
 

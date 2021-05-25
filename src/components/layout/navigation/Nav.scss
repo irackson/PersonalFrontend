@@ -4,7 +4,6 @@ $breakpoint: 769px;
 $breakpoint-min: 768px;
 
 $desktop-nav-width: 1200px;
-
 $font-family: 'Open Sans', sans-serif;
 $circle-nav-toggle-color: #191919;
 $circle-nav-toggle-weight: 30px;
@@ -230,7 +229,11 @@ $circle-nav-item-bg: #fff;
             height: auto;
             box-shadow: none;
         }
-
+        ul.circle-nav-menu {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
         .circle-nav-menu {
             width: $desktop-nav-width;
             max-width: 90vw;
@@ -260,19 +263,18 @@ $circle-nav-item-bg: #fff;
                     bottom: auto;
                     display: flex;
                     align-items: center;
-
-                    i {
+                    .material-icons {
                         font-size: 1em;
                         margin-right: 8px;
                     }
 
                     // Show icon?
                     @if $show-icon == true {
-                        i {
+                        .material-icons {
                             display: block;
                         }
                     } @else {
-                        i {
+                        .material-icons {
                             display: none;
                         }
                     }
@@ -283,7 +285,7 @@ $circle-nav-item-bg: #fff;
                             display: inline;
                             font-size: 0.8em;
                             text-transform: uppercase;
-                            font-family: $font-family;
+                            // font-family: $font-family;
                         }
                     } @else {
                         span {
