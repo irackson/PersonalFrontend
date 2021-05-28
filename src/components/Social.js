@@ -1,6 +1,6 @@
 const Social = (props) => {
     return (
-        <ul>
+        <ul className="social__list">
             <li>
                 <p>
                     <a

@@ -154,9 +154,63 @@ header {
     // width: 100%;
 }
 main {
-    outline: 1px solid green !important;
+    // border: 10px solid green !important;
 }
 
 footer {
     outline: 1px solid orange !important;
+}
+
+input {
+    width: 310px;
+}
+
+.social__list {
+    list-style: none;
+    display: flex;
+}
+
+input[type='checkbox'] {
+    width: min-content;
+}
+
+.business__container {
+    width: 300px;
+    height: 525px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('https://storage.jukeboxprint.com/s/images/stocks/cream-cotton-stock.jpg');
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.front__container {
+    width: 300px;
+    height: 525px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    button {
+        margin-bottom: 1rem;
+    }
+}
+.back__container {
+    width: 300px;
+    height: 525px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    aside {
+        margin-top: 1rem;
+        font-weight: bolder;
+        line-height: 1.5;
+    }
+
+    button {
+        margin-bottom: 1rem;
+    }
 }

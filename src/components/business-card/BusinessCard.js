@@ -1,3 +1,5 @@
+import ReactCardFlip from 'react-card-flip';
+
 import Front from 'components/business-card/Front';
 import Back from 'components/business-card/Back';
 import { useState } from 'react';
@@ -11,12 +13,11 @@ const BusinessCard = (props) => {
     };
 
     return (
-        <div
-        //! Disable until styling
-        // onMouseEnter={(e) => toggleCard(e)}
-        // onMouseLeave={(e) => toggleCard(e)}
-        >
-            {flipToggle ? <Back></Back> : <Front></Front>}
+        <div className="business__container">
+            <ReactCardFlip isFlipped={flipToggle} flipDirection="horizontal">
+                <Front toggleCard={toggleCard}></Front>
+                <Back toggleCard={toggleCard}></Back>
+            </ReactCardFlip>
         </div>
     );
 };

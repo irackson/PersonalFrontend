@@ -55,7 +55,6 @@ const Nav = (props) => {
 
     const toggleClick = (e) => {
         e.preventDefault();
-        console.log(clickToggle);
         setClickToggle(!clickToggle);
     };
 

@@ -36,6 +36,7 @@ const Subscribe = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <input type="submit" value="Subscribe!" />
             <div>
                 {!props.subState.projects ? (
                     <div>
@@ -77,7 +78,6 @@ const Subscribe = (props) => {
                     onChange={handleChange}
                 />
             </div>
-            <input type="submit" value="Subscribe!" />
         </form>
     );
 };

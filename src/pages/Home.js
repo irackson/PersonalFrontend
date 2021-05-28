@@ -9,7 +9,6 @@ const Section = styled.section`
     justify-content: center;
     flex-direction: column;
     /* min-width: 30ch; */
-    background: lightblue;
 
     ul {
         list-style: none;

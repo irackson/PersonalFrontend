@@ -76,14 +76,14 @@ const styleSeed = [
             {
                 name: 'InactiveNavButton',
                 background: {
-                    default: 'rgb(116, 115, 163)',
+                    default: 'rgb(107, 106, 206)',
                     light: 'rgb(137, 137, 137)',
                     dark: 'rgb(0, 34, 34)',
                     fun: 'rgb(128, 20, 113)',
                     minimal: 'lemonchiffon',
                 },
                 color: {
-                    default: 'rgba(168, 168, 168, 0.74)',
+                    default: 'rgba(168, 168, 168, 1)',
                     light: 'rgba(211, 205, 205, 0.904)',
                     dark: 'rgb(137, 137, 137)',
                     fun: 'rgb(160, 106, 179)',
@@ -92,7 +92,7 @@ const styleSeed = [
             {
                 name: 'PageNav',
                 background: {
-                    default: 'linear-gradient(to right,#99ff71, #526181)',
+                    default: 'linear-gradient(to right,#f7c5f77a, #d12e337a)',
                     light: 'linear-gradient(to right,#2c276b, rgb(160, 106, 179))',
                     dark: 'linear-gradient(to right,#47643c, #526181)',
                     fun: 'linear-gradient(to right,#f71070, rgb(160, 106, 179))',
@@ -100,7 +100,7 @@ const styleSeed = [
                         'linear-gradient(to right,#384e2f, rgb(243, 226, 226))',
                 },
                 opacity: {
-                    default: '0.7',
+                    default: '0.99',
                     light: '0.2',
                     dark: '1',
                     fun: '0.9',
