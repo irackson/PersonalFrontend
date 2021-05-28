@@ -14,6 +14,7 @@ const BusinessCard = (props) => {
 
     return (
         <div className="business__container">
+            {/* https://github.com/AaronCCWong/react-card-flip */}
             <ReactCardFlip isFlipped={flipToggle} flipDirection="horizontal">
                 <Front toggleCard={toggleCard}></Front>
                 <Back toggleCard={toggleCard}></Back>

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import styles from 'components/map/Map.module.css';
 import mapStyle from 'components/map/map-style';
-
+// https://stackoverflow.com/questions/59282213/react-warning-non-passive-event-listener-to-a-scroll-blocking-touchstart
 const Map = (props) => {
     const mapDiv = useRef();
     useEffect(() => {
