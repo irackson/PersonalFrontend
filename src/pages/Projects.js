@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect } from 'react';
-import Slider from '@bit/akiran.react-slick.slider';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
 const SliderCard = styled.div`
     /* display: flex; */
@@ -93,8 +95,8 @@ const Project = (props) => {
                     />
                     <Slider {...settings}>
                         {props.projects.map((project, i) => (
-                            <SliderCard>
-                                <Link to={`/projects/${project.slug}`} key={i}>
+                            <SliderCard key={i}>
+                                <Link to={`/projects/${project.slug}`}>
                                     <h3>{project.title}</h3>
                                 </Link>
                                 <img

@@ -30,11 +30,14 @@ const Metrics = (props) => {
                 <div className="calendar"></div>
             </section>
             <section>
+                {/* BUGFIX: Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute */}
+
                 <figure>
                     <embed
                         width="1000"
                         height="700"
                         src="https://wakatime.com/share/@4c81cb27-377a-401f-b22b-0f0921763ea1/192f8a18-8f63-40c4-b7df-7afb3945b376.svg"
+                        // sameSite="Strict"
                     />
                 </figure>
                 <figure>
@@ -42,6 +45,7 @@ const Metrics = (props) => {
                         width="1000"
                         height="700"
                         src="https://wakatime.com/share/@4c81cb27-377a-401f-b22b-0f0921763ea1/24573ca6-65ed-4336-bc5d-886b2e845097.svg"
+                        // sameSite="Strict"
                     />
                 </figure>
             </section>

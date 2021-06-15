@@ -25,6 +25,7 @@ const Home = (props) => {
     }, []);
     const loaded = () => {
         return (
+            // BUGFIX: update nav button colors when featured blog/project clicked
             <div>
                 <ul>
                     <li>
