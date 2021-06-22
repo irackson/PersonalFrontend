@@ -12,7 +12,8 @@ const Div = styled.div`
 `;
 
 const Faq = styled.section`
-    width: 80ch;
+    max-width: 80ch;
+    padding: 1em;
 `;
 
 const About = (props) => {

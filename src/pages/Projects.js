@@ -99,10 +99,16 @@ const Project = (props) => {
                                 <Link to={`/projects/${project.slug}`}>
                                     <h3>{project.title}</h3>
                                 </Link>
-                                <img
-                                    src={project.thumbnail}
-                                    alt={project.slug}
-                                />
+                                <a
+                                    href={project.liveLink}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={project.slug}
+                                    />
+                                </a>
                                 <div className="description">
                                     <h4>{project.description}</h4>
                                 </div>

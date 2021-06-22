@@ -158,7 +158,7 @@ main {
 }
 
 footer {
-    outline: 1px solid orange !important;
+    // outline: 1px solid orange !important;
 }
 
 input {
@@ -240,4 +240,125 @@ input[type='checkbox'] {
 .slick-next:before,
 .slick-prev:before {
     color: #000;
+}
+
+.wakatime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: clamp(15px, 60px, 4rem);
+    padding-bottom: clamp(8px, 30px, 2rem);
+    gap: 4rem;
+    flex-wrap: nowrap;
+    // overflow-x: hidden;
+    figure {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        // padding-left: -100px;
+        // padding-left: clamp(15px, 20px, 2rem);
+        // padding-right: clamp(15px, 20px, 2rem);
+        @media (max-width: 769px) {
+            margin-top: -100px;
+            margin-bottom: -100px;
+        }
+    }
+}
+
+.calendar {
+    padding: 1rem;
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.home {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+
+    .featured-project {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 30ch;
+        margin: auto;
+    }
+
+    .business-card {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .featured-blog {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 30ch;
+        margin: auto;
+    }
+
+    @media (max-width: 769px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        .featured-project {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            margin-bottom: -20px;
+        }
+
+        .business-card {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .featured-blog {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+    }
+}
+
+.subscribe-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .subscribe-checkboxes {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+    }
+}
+
+input[type='checkbox'] {
+    width: 12px;
+    height: 12px;
+    margin: -1px 0px 0 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+input[type='text'] {
+    text-align: center;
+}
+input[type='email'] {
+    text-align: center;
 }

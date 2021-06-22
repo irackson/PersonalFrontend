@@ -1,4 +1,5 @@
 import 'styles/vendors/GitCalStyle.css';
+import useWindowDimensions from 'utils/window-size';
 import GitHubCalendar from 'github-calendar';
 import { useState, useEffect } from 'react';
 
@@ -8,6 +9,7 @@ const Metrics = (props) => {
     }, []);
 
     const [cal, setCal] = useState(null);
+    const { height, width } = useWindowDimensions();
 
     const getCal = () => {
         const calendar = GitHubCalendar('.calendar', 'irackson', {
@@ -29,21 +31,22 @@ const Metrics = (props) => {
             <section>
                 <div className="calendar"></div>
             </section>
-            <section>
+            <section className="wakatime">
                 {/* BUGFIX: Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute */}
 
                 <figure>
                     <embed
-                        width="1000"
-                        height="700"
+                        width={Math.floor(width * (80 / 100))}
+                        height={Math.floor(height * (60 / 100))}
                         src="https://wakatime.com/share/@4c81cb27-377a-401f-b22b-0f0921763ea1/192f8a18-8f63-40c4-b7df-7afb3945b376.svg"
                         // sameSite="Strict"
+                        // heigh
                     />
                 </figure>
                 <figure>
                     <embed
-                        width="1000"
-                        height="700"
+                        width={Math.floor(width * (80 / 100))}
+                        height={Math.floor(height * (60 / 100))}
                         src="https://wakatime.com/share/@4c81cb27-377a-401f-b22b-0f0921763ea1/24573ca6-65ed-4336-bc5d-886b2e845097.svg"
                         // sameSite="Strict"
                     />

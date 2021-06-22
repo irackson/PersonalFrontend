@@ -35,50 +35,54 @@ const Subscribe = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="submit" value="Subscribe!" />
-            <div>
-                {!props.subState.projects ? (
-                    <div>
-                        <label htmlFor="projects">projects</label>
-                        <input
-                            type="checkbox"
-                            name="projects"
-                            checked={subForm.projects}
-                            onChange={handleChange}
-                        ></input>
-                    </div>
-                ) : null}
-                {!props.subState.blog ? (
-                    <div>
-                        <label htmlFor="blog">blog</label>
-                        <input
-                            type="checkbox"
-                            name="blog"
-                            checked={subForm.blog}
-                            onChange={handleChange}
-                        ></input>
-                    </div>
-                ) : null}
-            </div>
-            <div>
-                <input
-                    type="text"
-                    name="first_name"
-                    placeholder="your name"
-                    value={subForm.first_name}
-                    onChange={handleChange}
-                />
-                <input
-                    type="email"
-                    name="email"
-                    value={subForm.email}
-                    required
-                    placeholder="your email address"
-                    onChange={handleChange}
-                />
-            </div>
-        </form>
+        <div className="subscribe-container">
+            <form onSubmit={handleSubmit}>
+                <input type="submit" value="Subscribe!" />
+                <div className="subscribe-checkboxes">
+                    {!props.subState.projects ? (
+                        <div>
+                            <label htmlFor="projects">projects</label>
+                            <input
+                                type="checkbox"
+                                name="projects"
+                                checked={subForm.projects}
+                                onChange={handleChange}
+                            ></input>
+                            <span></span>
+                        </div>
+                    ) : null}
+                    {!props.subState.blog ? (
+                        <div>
+                            <label htmlFor="blog">blog</label>
+                            <input
+                                type="checkbox"
+                                name="blog"
+                                checked={subForm.blog}
+                                onChange={handleChange}
+                            ></input>
+                            <span></span>
+                        </div>
+                    ) : null}
+                </div>
+                <div>
+                    <input
+                        type="text"
+                        name="first_name"
+                        placeholder="your name"
+                        value={subForm.first_name}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        value={subForm.email}
+                        required
+                        placeholder="your email address"
+                        onChange={handleChange}
+                    />
+                </div>
+            </form>
+        </div>
     );
 };
 
