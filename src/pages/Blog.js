@@ -96,7 +96,7 @@ const Blog = (props) => {
                     <Slider {...settings}>
                         {props.blogs.map((blog, i) => (
                             <SliderCard key={i}>
-                                <Link to={`/blogs/${blog.slug}`}>
+                                <Link to={`/blog/${blog.slug}`}>
                                     <h3>{blog.title}</h3>
                                 </Link>
                                 <img src={blog.thumbnail} alt={blog.slug} />

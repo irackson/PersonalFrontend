@@ -84,9 +84,7 @@ const Home = (props) => {
                         Featured Blog:
                         {props.featuredBlog ? (
                             <SliderCard>
-                                <Link
-                                    to={`/projects/${props.featuredBlog.slug}`}
-                                >
+                                <Link to={`/blog/${props.featuredBlog.slug}`}>
                                     <h3>{props.featuredBlog.title}</h3>
                                 </Link>
                                 <img
