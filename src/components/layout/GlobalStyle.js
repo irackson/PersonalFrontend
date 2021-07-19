@@ -16,6 +16,8 @@ const GlobalContainer = styled.div`
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    max-width: 100vw !important;
+    overflow-x: hidden;
 `;
 const GlobalContainer_props = {};
 

@@ -163,7 +163,7 @@ const styleSeed = [
                     default: '2px solid transparent',
                 },
                 'font-size': {
-                    default: '32px',
+                    default: '24px',
                 },
                 'background-color': {
                     default: 'transparent',

@@ -19,6 +19,7 @@ const FooterContainer = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10vh;
 `;
 const FooterContainer_props = {};
 
