@@ -6,6 +6,8 @@
 
 ### icebucket
 
+-   radius of nav icons on mobile
+-   max-page width 100vw important
 -   nav bar collape on mobile, expand on desktop
 -   theme selector always collapes, with current theme displayed
 
