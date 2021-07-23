@@ -8,7 +8,7 @@ const Back = (props) => {
                 <MapLoader></MapLoader>
                 <aside>
                     <p>(917) 684-8443</p>
-                    <p>nasirus@protonmail.com</p>
+                    <p>ian@rackson.com</p>
                 </aside>
                 {/* <p>inasusr@gmail.com</p> */}
                 {/* <p>ian@rackson.com</p> */}
