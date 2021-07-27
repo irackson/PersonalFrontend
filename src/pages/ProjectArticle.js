@@ -1,5 +1,5 @@
 import { Redirect } from 'react-router-dom';
-import styled from 'styled-components';
+import moment from 'moment';
 import Markdown from 'components/Markdown';
 import { useEffect } from 'react';
 const ProjectArticle = (props) => {
@@ -25,27 +25,49 @@ const ProjectArticle = (props) => {
         return typeof project === 'undefined' ? (
             <Redirect to="/" />
         ) : (
-            <div>
-                <h1>{project.title}</h1>
-                <h2>{project.description}</h2>
-                <a
-                    href={project.codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    link to code repo
-                </a>
-                <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    link to live site
-                </a>
-                <img src={project.thumbnail} alt={project.slug}></img>
-                <h5>{project.createdAt}</h5>
-                <h5>{project.updatedAt}</h5>
-                <Markdown sanitizedHtml={project.sanitizedHtml}></Markdown>
+            <div className="article">
+                <article className="article__container">
+                    <div className="article__heading">
+                        <h1 className="article__title">{project.title}</h1>
+                        <h2 className="article__description">
+                            {project.description}
+                        </h2>
+                    </div>
+                    <div className="article__dates">
+                        <h4>{moment(project.createdAt).format('LL')}</h4>
+                    </div>
+                    {/* <h5>{project.updatedAt}</h5> */}
+                    <div className="article__links">
+                        <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={project.thumbnail}
+                                alt={project.slug}
+                            ></img>
+                        </a>
+                        <p>click preview image for live site, </p>
+
+                        <p>
+                            <span>or view the </span>
+                            <a
+                                href={project.codeLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                code on GitHub
+                            </a>
+                        </p>
+                    </div>
+
+                    <div className="article__markdown-container">
+                        <Markdown
+                            sanitizedHtml={project.sanitizedHtml}
+                        ></Markdown>
+                    </div>
+                </article>
             </div>
         );
     };

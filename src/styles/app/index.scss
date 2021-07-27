@@ -10,6 +10,10 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    // todo: fix mobile responsiveness with text clipping;
+    // @media (max-width: 769px) {
+    //     // overflow: visible !important;
+    // }
 }
 
 /* Remove default margin */

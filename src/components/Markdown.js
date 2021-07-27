@@ -1,7 +1,7 @@
 import { StyleContext } from 'components/providers/ThemeProvider';
 import Prism from 'prismjs';
 import { useEffect, useState, useContext } from 'react';
-
+import 'styles/app/markdown.scss';
 import styled from 'styled-components';
 import { getStyledCommands } from 'utils/theme-helper';
 
@@ -84,18 +84,20 @@ const Markdown = (props) => {
     }, [themes.currentTheme]);
 
     return (
-        <MarkdownHeading MarkdownHeading_props={MarkdownHeading_props}>
-            <MarkdownCode MarkdownCode_props={MarkdownCode_props}>
-                <link rel="stylesheet" href={`${baseURL}/${sheet}`} />
-                <div>
-                    <div
-                        dangerouslySetInnerHTML={{
-                            __html: props.sanitizedHtml,
-                        }}
-                    ></div>
-                </div>
-            </MarkdownCode>
-        </MarkdownHeading>
+        <div className="markdown">
+            <MarkdownHeading MarkdownHeading_props={MarkdownHeading_props}>
+                <MarkdownCode MarkdownCode_props={MarkdownCode_props}>
+                    <link rel="stylesheet" href={`${baseURL}/${sheet}`} />
+                    <div>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: props.sanitizedHtml,
+                            }}
+                        ></div>
+                    </div>
+                </MarkdownCode>
+            </MarkdownHeading>
+        </div>
     );
 };
 
