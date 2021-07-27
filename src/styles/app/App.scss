@@ -295,7 +295,7 @@ input[type='checkbox'] {
         margin: auto;
     }
 
-    @media (max-width: 769px) {
+    @media (max-width: 926px) {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
         .featured-project {

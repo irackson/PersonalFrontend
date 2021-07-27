@@ -14,8 +14,8 @@ const styledComponentNames = [
 const ActiveNavButton = styled.button`
     background: ${(props) => props.ActiveNavButton_props['background']};
     color: ${(props) => props.ActiveNavButton_props['color']};
-    border-radius: 5%;
-    @media only screen and (min-width: 768px) {
+    border-radius: 50%;
+    @media only screen and (min-width: 789px) {
         width: 6ch;
         border-radius: 5%;
     }
@@ -25,8 +25,8 @@ const ActiveNavButton_props = {};
 const InactiveNavButton = styled.button`
     background: ${(props) => props.InactiveNavButton_props['background']};
     color: ${(props) => props.InactiveNavButton_props['color']};
-    border-radius: 5%;
-    @media only screen and (min-width: 768px) {
+    border-radius: 50%;
+    @media only screen and (min-width: 789px) {
         border-radius: 5%;
         width: 6ch;
     }
@@ -38,7 +38,7 @@ const PageNav = styled.nav`
         background: ${(props) => props.PageNav_props['background']};
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
         &.circle-nav-wrapper {
             background: ${(props) => props.PageNav_props['background']};
         }
