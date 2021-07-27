@@ -15,10 +15,10 @@ const ActiveNavButton = styled.button`
     background: ${(props) => props.ActiveNavButton_props['background']};
     color: ${(props) => props.ActiveNavButton_props['color']};
     border-radius: 50%;
-    /* @media (min-width: 769px) {
+    @media only screen and (min-width: 769px) {
         border-radius: 5%;
         width: 6ch;
-    } */
+    }
 `;
 const ActiveNavButton_props = {};
 
@@ -26,10 +26,10 @@ const InactiveNavButton = styled.button`
     background: ${(props) => props.InactiveNavButton_props['background']};
     color: ${(props) => props.InactiveNavButton_props['color']};
     border-radius: 50%;
-    /* @media (min-width: 769px) {
+    @media only screen and (min-width: 769px) {
         border-radius: 5%;
         width: 6ch;
-    } */
+    }
 `;
 const InactiveNavButton_props = {};
 
