@@ -2,7 +2,7 @@
 //* | |\ | /__`  |  |__) |  | /  `  |  | /  \ |\ | /__`
 //* | | \| .__/  |  |  \ \__/ \__,  |  | \__/ | \| .__/
 
-// TODO: in each file that uses this util
+// in each file that uses this util
 //! declare variables (ex...)
 //* in each component file
 // const relativePath = 'src/components/weather/WeatherIcon';
@@ -12,12 +12,12 @@
 // const Icon_props = {};
 // const MySection_props = {};
 
-// TODO: pass specific parameters to util
+// pass specific parameters to util
 //! relativePath, styledComponentNames
 //! also pass global state parameters -- mode, styles (ex...)
 // const mode = 'default';
 
-// TODO: expect an array of strings back
+// expect an array of strings back
 //! loop over array and eval each to set styled props
 
 //*  __   __   __   ___
@@ -32,8 +32,9 @@ const getStyledCommands = (
 ) => {
     let styledCommands = [];
 
-    const customizableComponents = styles.find((e) => e.path === relativePath)
-        .customizableComponents;
+    const customizableComponents = styles.find(
+        (e) => e.path === relativePath
+    ).customizableComponents;
 
     for (let i = 0; i < styledComponentNames.length; i++) {
         let properties;
