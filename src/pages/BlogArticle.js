@@ -1,5 +1,5 @@
 import { Redirect } from 'react-router-dom';
-import styled from 'styled-components';
+import moment from 'moment';
 import Markdown from 'components/Markdown';
 import { useEffect, useState } from 'react';
 
@@ -25,13 +25,26 @@ const BlogArticle = (props) => {
         return typeof blog === 'undefined' ? (
             <Redirect to="/" />
         ) : (
-            <div>
-                <h1>{blog.title}</h1>
-                <h2>{blog.description}</h2>
-                <img src={blog.thumbnail} alt={blog.slug}></img>
-                <h5>{blog.createdAt}</h5>
-                <h5>{blog.updatedAt}</h5>
-                <Markdown sanitizedHtml={blog.sanitizedHtml}></Markdown>
+            <div className="article">
+                <article className="article__container">
+                    <div className="article__heading">
+                        <h1 className="article__title">{blog.title}</h1>
+                        <h2 className="article__description">
+                            {blog.description}
+                        </h2>
+                    </div>
+                    <div className="article__dates">
+                        <h4>{moment(blog.createdAt).format('LL')}</h4>
+                    </div>
+                    {/* <h5>{blog.updatedAt}</h5> */}
+                    <div className="article__links">
+                        <img src={blog.thumbnail} alt={blog.slug}></img>
+                    </div>
+
+                    <div className="article__markdown-container">
+                        <Markdown sanitizedHtml={blog.sanitizedHtml}></Markdown>
+                    </div>
+                </article>
             </div>
         );
     };
