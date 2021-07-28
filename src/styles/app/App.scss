@@ -187,7 +187,7 @@ input[type='checkbox'] {
         margin-bottom: 1rem;
     }
 }
-.back__container {
+.back {
     width: 300px;
     height: 525px;
     display: flex;
@@ -195,10 +195,12 @@ input[type='checkbox'] {
     justify-content: space-between;
     align-items: center;
 
-    aside {
-        // margin-top: 1rem;
-        font-weight: bolder;
-        // line-height: 1.5;
+    &__text-container {
+        padding-top: 1rem;
+        font-weight: bold;
+        a {
+            color: currentColor;
+        }
     }
 
     button {
@@ -263,12 +265,12 @@ input[type='checkbox'] {
 
 .home {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
     text-align: center;
     align-content: center;
     justify-content: center;
+    margin-top: 6%;
 
     .featured-project {
         grid-column-start: 1;

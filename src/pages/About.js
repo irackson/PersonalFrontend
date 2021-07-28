@@ -17,13 +17,16 @@ const Faq = styled.section`
 `;
 
 const About = (props) => {
-    useEffect(() => {
-        document.title = 'Ian Rackson | About';
-    }, []);
-
     const loaded = () => {
         return (
             <Div>
+                <div>
+                    <a href="https://github.com/irackson/PersonalBackend/raw/main/public/assets/resume/IanRackson-Resume.pdf">
+                        download resume
+                    </a>
+                </div>
+                {/* TODO: add skills section */}
+                {/* <div>skills</div> */}
                 <Faq>
                     {props.about.faq.map((e, ei) => (
                         <div key={ei}>

@@ -9,7 +9,6 @@ import Home from 'pages/Home';
 import Metrics from 'pages/Metrics';
 import ProjectArticle from 'pages/ProjectArticle';
 import Projects from 'pages/Projects';
-import Resume from 'pages/Resume';
 import Settings from 'pages/Settings';
 import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
@@ -91,10 +90,6 @@ export default function Main(props) {
                                     isLoaded={allData.isLoaded}
                                 />
                             )}
-                        ></Route>
-                        <Route
-                            path="/resume"
-                            render={(props) => <Resume {...props} />}
                         ></Route>
                         <Route
                             path="/about"

@@ -2,16 +2,15 @@ import MapLoader from 'components/map/MapLoader';
 
 const Back = (props) => {
     return (
-        <div className="back__container">
+        <div className="back">
             <div></div>
             <div>
                 <MapLoader></MapLoader>
-                <aside>
+                <section className="back__text-container">
                     <p>(917) 684-8443</p>
-                    <p>ian@rackson.com</p>
-                </aside>
-                {/* <p>inasusr@gmail.com</p> */}
-                {/* <p>ian@rackson.com</p> */}
+                    <br />
+                    <a href="mailto:ian@rackson.com">ian@rackson.com</a>
+                </section>
             </div>
             <button onClick={(e) => props.toggleCard(e)}>Flip Back</button>
         </div>
