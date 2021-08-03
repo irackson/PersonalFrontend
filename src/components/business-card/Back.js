@@ -12,7 +12,12 @@ const Back = (props) => {
                     <a href="mailto:ian@rackson.com">ian@rackson.com</a>
                 </section>
             </div>
-            <button onClick={(e) => props.toggleCard(e)}>Flip Back</button>
+            <button
+                className="btn draw-border"
+                onClick={(e) => props.toggleCard(e)}
+            >
+                Flip Back
+            </button>
         </div>
     );
 };

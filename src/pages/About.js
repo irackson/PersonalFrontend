@@ -19,8 +19,8 @@ const Faq = styled.section`
 const About = (props) => {
     const loaded = () => {
         return (
-            <Div>
-                <div>
+            <Div className="about">
+                <div className="about__resume-container">
                     <a href="https://github.com/irackson/PersonalBackend/raw/main/public/assets/resume/IanRackson-Resume.pdf">
                         download resume
                     </a>

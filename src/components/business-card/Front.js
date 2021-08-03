@@ -12,7 +12,12 @@ const Front = (props) => {
                     <span className="front__webdev">Web Dev</span>
                 </h3>
             </div>
-            <button onClick={(e) => props.toggleCard(e)}>Contact Info</button>
+            <button
+                className="btn draw-border"
+                onClick={(e) => props.toggleCard(e)}
+            >
+                Contact Info
+            </button>
         </div>
     );
 };

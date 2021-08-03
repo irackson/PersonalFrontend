@@ -166,7 +166,9 @@
     *:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p) {
         // margin: 1rem auto 1rem;
         // max-width: 36rem;
-        // padding: 0.25rem;
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        hyphens: none;
     }
 
     div {
@@ -232,4 +234,8 @@
         // padding-bottom: 1rem;
         display: inline;
     }
+    // padding-left: 1px;
+    // padding-right: 10px;
+    // margin-left: 10px;
+    // margin-right: 15px;
 }

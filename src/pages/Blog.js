@@ -11,6 +11,7 @@ const SliderCard = styled.div`
     /* border: 1px solid magenta; */
     min-height: 400px;
     width: 100%;
+    max-width: 50ch;
     text-align: center !important;
     text-overflow: ellipsis !important;
     overflow: visible !important;

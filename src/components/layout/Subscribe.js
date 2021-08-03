@@ -37,11 +37,15 @@ const Subscribe = (props) => {
     return (
         <div className="subscribe-container">
             <form onSubmit={handleSubmit}>
-                <input type="submit" value="Subscribe!" />
+                <input
+                    className="btn draw-border"
+                    type="submit"
+                    value="Subscribe!"
+                />
                 <div className="subscribe-checkboxes">
                     {!props.subState.projects ? (
                         <div>
-                            <label htmlFor="projects">projects</label>
+                            <label htmlFor="projects">apps</label>
                             <input
                                 type="checkbox"
                                 name="projects"
@@ -53,7 +57,7 @@ const Subscribe = (props) => {
                     ) : null}
                     {!props.subState.blog ? (
                         <div>
-                            <label htmlFor="blog">blog</label>
+                            <label htmlFor="blog">blogs</label>
                             <input
                                 type="checkbox"
                                 name="blog"
@@ -68,7 +72,7 @@ const Subscribe = (props) => {
                     <input
                         type="text"
                         name="first_name"
-                        placeholder="your name"
+                        placeholder="full name"
                         value={subForm.first_name}
                         onChange={handleChange}
                     />
@@ -77,7 +81,7 @@ const Subscribe = (props) => {
                         name="email"
                         value={subForm.email}
                         required
-                        placeholder="your email address"
+                        placeholder="email address"
                         onChange={handleChange}
                     />
                 </div>
