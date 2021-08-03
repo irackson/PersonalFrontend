@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $cubic-bezier: cubic-bezier(0, 1.16, 1, 1);
 
 $breakpoint: 769px;
@@ -23,8 +25,8 @@ $circle-nav-item-bg: #fff;
         z-index: 9999999;
         right: 0px;
         top: 0px;
-        width: $circle-nav-panel-width/2;
-        height: $circle-nav-panel-height/2;
+        width: math.div($circle-nav-panel-width, 2);
+        height: math.div($circle-nav-panel-height, 2);
         overflow: hidden;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
             Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -77,7 +79,7 @@ $circle-nav-item-bg: #fff;
             border-radius: 50%;
             transform: translate(-50%, -52.5%);
             transition: width 0.2s $cubic-bezier, height 0.2s $cubic-bezier;
-            margin-left: $circle-nav-panel-width/2 + 12; // 12 to avoid cropping the shadow
+            margin-left: math.div($circle-nav-panel-width, 2) + 12; // 12 to avoid cropping the shadow
 
             // Navigation open
             &.circle-nav-open {
@@ -90,8 +92,8 @@ $circle-nav-item-bg: #fff;
 
         // Navigation items
         .circle-nav-menu {
-            width: $circle-nav-panel-width/2;
-            height: $circle-nav-panel-height/2;
+            width: math.div($circle-nav-panel-width, 2);
+            height: math.div($circle-nav-panel-height, 2);
 
             .circle-nav-item {
                 position: absolute;
@@ -114,8 +116,8 @@ $circle-nav-item-bg: #fff;
                 &-3,
                 &-4,
                 &-5 {
-                    left: $circle-nav-panel-width/2;
-                    bottom: $circle-nav-panel-width/2;
+                    left: math.div($circle-nav-panel-width, 2);
+                    bottom: math.div($circle-nav-panel-width, 2);
                 }
 
                 i {

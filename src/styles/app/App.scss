@@ -1,3 +1,5 @@
+@use "sass:math";
+
 :root {
     --input-border: orange;
     --input-focus-h: 245;
@@ -82,7 +84,7 @@ $level-size: $type-base-size;
             // incorrectly assuming intent
 
             // Remove unit for calculations
-            $level-unitless: $level-size / ($level-size * 0 + 1);
+            $level-unitless: math.div($level-size, $level-size * 0 + 1);
 
             // Set minimum size to a percentage less than $level-size
             // Reduction is greater for large font sizes (> 4rem) to help
