@@ -185,6 +185,11 @@ input {
 
     &__text-container {
         padding-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
         font-weight: bold;
         a {
             color: currentColor;
@@ -524,7 +529,7 @@ input[type='email'] {
             font-family: 'Helvetica Neue', Arial;
             font-size: 3.5rem;
             font-weight: bold;
-            user-select: none;
+            // user-select: none;
             text-decoration: overline;
         }
 

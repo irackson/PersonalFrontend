@@ -7,8 +7,7 @@ const Back = (props) => {
             <div>
                 <MapLoader></MapLoader>
                 <section className="back__text-container">
-                    <p>(917) 684-8443</p>
-                    <br />
+                    <a href="tel:917-684-8443">(917) 684-8443</a>
                     <a href="mailto:ian@rackson.com">ian@rackson.com</a>
                 </section>
             </div>
