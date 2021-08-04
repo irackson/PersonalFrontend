@@ -170,6 +170,8 @@ input {
     align-items: center;
     button {
         margin-bottom: 1rem;
+        white-space: nowrap;
+        min-width: fit-content;
         width: 12ch;
     }
 }
@@ -191,6 +193,8 @@ input {
 
     button {
         margin-bottom: 1rem;
+        white-space: nowrap;
+        min-width: fit-content;
         width: 12ch;
     }
 }
@@ -425,7 +429,6 @@ input[type='email'] {
     cursor: pointer;
     letter-spacing: 0.05rem;
     border: 0px solid white;
-    white-space: nowrap;
 }
 //=== End Button styling
 
