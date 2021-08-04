@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { getAbout } from 'utils/api';
+// import { getAbout } from 'utils/api';
 
 const Div = styled.div`
     display: flex;
@@ -21,9 +21,50 @@ const About = (props) => {
         return (
             <Div className="about">
                 <div className="about__resume-container">
-                    <a href="https://github.com/irackson/PersonalBackend/raw/main/public/assets/resume/IanRackson-Resume.pdf">
-                        download resume
-                    </a>
+                    <div id="container">
+                        {/* https://codepen.io/mattsrinc/pen/OXwKkv */}
+                        <div id="circle">
+                            <a href="https://github.com/irackson/PersonalBackend/raw/main/public/assets/resume/IanRackson-Resume.pdf">
+                                <svg
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                                    x="0px"
+                                    y="0px"
+                                    width="300px"
+                                    height="300px"
+                                    viewBox="0 0 300 300"
+                                    enableBackground="new 0 0 300 300"
+                                >
+                                    <defs>
+                                        <path
+                                            id="circlePath"
+                                            d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+                                        />
+                                    </defs>
+
+                                    <i className="fas fa-file-pdf"></i>
+                                    <circle
+                                        cx="150"
+                                        cy="100"
+                                        r="75"
+                                        fill="none"
+                                    />
+                                    <g>
+                                        <use
+                                            xlinkHref="#circlePath"
+                                            fill="none"
+                                        />
+                                        <text fill="goldenrod">
+                                            <textPath xlinkHref="#circlePath">
+                                                RESUME
+                                            </textPath>
+                                        </text>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 {/* TODO: add skills section */}
                 {/* <div>skills</div> */}
