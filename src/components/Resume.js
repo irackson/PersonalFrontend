@@ -17,12 +17,12 @@ const Resume = ({ docLink }) => {
                 <div
                     id="circle"
                     onClick={(e) => openResume(e)}
-                    // onTouchCancel={(e) => openResume(e)}
+                    onTouchCancel={(e) => openResume(e)}
                     onTouchEnd={(e) => openResume(e)}
-                    // onTouchMoveCapture={(e) => openResume(e)}
-                    // onTouchStart={(e) => openResume(e)}
-                    // onTouchEnd={(e) => openResume(e)}
-                    // onTouchMove={(e) => openResume(e)}
+                    onTouchMoveCapture={(e) => openResume(e)}
+                    onTouchStart={(e) => openResume(e)}
+                    onTouchEnd={(e) => openResume(e)}
+                    onTouchMove={(e) => openResume(e)}
                     style={{ cursor: 'pointer' }}
                 >
                     <svg
