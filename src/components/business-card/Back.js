@@ -9,7 +9,7 @@ const Back = (props) => {
                     style={
                         props.isFlipped
                             ? { visibility: 'visible' }
-                            : { visibility: 'hidden', transitionDelay: '200ms' }
+                            : { visibility: 'hidden', transitionDelay: '160ms' }
                     }
                 >
                     <MapLoader></MapLoader>
