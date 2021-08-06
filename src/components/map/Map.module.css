@@ -4,3 +4,10 @@
     border: 2px solid blanchedalmond;
     background-color: blanchedalmond;
 }
+
+.Placeholder {
+    height: 200px;
+    width: 200px;
+    border: 2px solid transparent;
+    background-color: transparent;
+}

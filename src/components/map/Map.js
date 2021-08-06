@@ -5,7 +5,12 @@ import mapStyle from 'components/map/map-style';
 const Map = (props) => {
     const mapDiv = useRef();
     useEffect(() => {
-        if (props.coordinates.lat && props.coordinates.lng) {
+        if (
+            window.google?.maps &&
+            mapDiv.current &&
+            props.coordinates.lat &&
+            props.coordinates.lng
+        ) {
             const location = {
                 lat: props.coordinates.lat,
                 lng: props.coordinates.lng,
@@ -34,11 +39,25 @@ const Map = (props) => {
         }
     }, [props.coordinates.lat, props.coordinates.lng, props.zoom]);
 
-    return (
-        <div>
-            <div ref={mapDiv} className={styles.Map}></div>
-        </div>
-    );
+    const googleLoaded = () => {
+        return (
+            <div>
+                <div ref={mapDiv} className={styles.Map}></div>
+            </div>
+        );
+    };
+
+    const googleLoading = () => {
+        return (
+            <div>
+                <div ref={mapDiv} className={styles.Placeholder}></div>
+            </div>
+        );
+    };
+
+    return window.google?.maps && mapDiv.current
+        ? googleLoaded()
+        : googleLoading();
 };
 
 export default Map;
