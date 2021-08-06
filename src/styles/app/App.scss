@@ -15,8 +15,8 @@
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Fraunces 9pt Soft', 'Helvetica Neue Light', 'Helvetica Neue',
-    'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Fraunces 9pt Soft', 'Georgia', 'Helvetica Neue Light',
+    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -141,18 +141,35 @@ input {
     width: 310px;
 }
 
-.social__list {
-    list-style: none;
+.social {
     display: flex;
-    gap: max(2rem, 20px);
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    padding-left: 0;
-    padding-right: 0;
+    height: 5vmax;
+    margin-bottom: 5px;
 
-    a:hover {
-        color: rgb(12, 12, 197);
-        font-size: larger;
+    &__list {
+        list-style: none;
+        padding: 0;
+        display: inline-grid;
+        grid-auto-rows: max-content;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
+        width: 33vw;
+
+        a {
+            color: #6b6ace;
+            line-height: 0;
+        }
+
+        a:hover {
+            color: rgb(219, 114, 102);
+            font-size: 2.5rem;
+        }
     }
 }
 
@@ -179,6 +196,7 @@ input {
         white-space: nowrap;
         min-width: fit-content;
         width: 12ch;
+        border-radius: 2px;
     }
 
     h2 {
@@ -215,6 +233,7 @@ input {
         white-space: nowrap;
         min-width: fit-content;
         width: 12ch;
+        border-radius: 2px;
     }
 }
 
@@ -350,6 +369,7 @@ input {
     padding: 0.25rem;
     background: rgba(255, 255, 255, 0.5);
     margin: 0 0 10px 0;
+    border-radius: 20%;
 }
 
 input[type='checkbox'] {
@@ -509,28 +529,53 @@ input[type='email'] {
 }
 
 .about {
+    &__faq {
+        h2 {
+            text-decoration: underline;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-style: italic;
+        }
+
+        h4 {
+            display: flex;
+            flex-direction: column;
+            white-space: pre-line;
+            row-gap: 1rem;
+        }
+
+        p {
+            text-indent: 2rem;
+            line-height: 1.75rem;
+        }
+    }
+
     &__resume-container {
-        // border: 1px solid black;
-        width: min(800px, 80%);
         padding-top: 3rem;
         display: flex;
-        justify-items: left;
+        justify-items: center;
+        align-items: center;
 
-        :hover {
-            overflow: visible !important;
-            text-shadow: 2px 2px rgba(210, 226, 67, 0.548);
-        }
         a {
             color: currentColor;
         }
 
         #container {
             margin: 0%;
+            :hover {
+                overflow: visible !important;
+                text-shadow: 2px 2px rgba(210, 226, 67, 0.548);
+            }
         }
 
         #circle {
             position: relative;
-            width: 100%;
+            // width: 100%;
+            width: 80px;
+            border-radius: 50%;
             // padding-bottom: 100%;
             overflow: hidden;
         }
@@ -539,7 +584,7 @@ input[type='email'] {
             font-family: 'Helvetica Neue', Arial;
             font-size: 3.5rem;
             font-weight: bold;
-            // user-select: none;
+            user-select: none;
             text-decoration: overline;
         }
 

@@ -1,7 +1,8 @@
 const Social = (props) => {
     return (
-        <ul className="social__list">
-            {/* <li>
+        <div className="social">
+            <ul className="social__list">
+                {/* <li>
                 <p>
                     <a
                         target="_blank"
@@ -13,7 +14,7 @@ const Social = (props) => {
                 </p>
             </li> */}
 
-            {/* <li>
+                {/* <li>
                 <p>
                     <a
                         target="_blank"
@@ -24,40 +25,44 @@ const Social = (props) => {
                     </a>
                 </p>
             </li> */}
-            <li>
-                <p>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.linkedin.com/in/ianrackson/"
-                    >
-                        <i id="linkedin" className="fab fa-linkedin"></i>
-                    </a>
-                </p>
-            </li>
-            <li>
-                <p>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://github.com/irackson/"
-                    >
-                        <i id="github" className="fab fa-github-square"></i>
-                    </a>
-                </p>
-            </li>
-            <li>
-                <p>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.youtube.com/channel/UChtYvxQVNWgsySzDJRcv6SQ"
-                    >
-                        <i id="github" className="fab fa-youtube-square"></i>
-                    </a>
-                </p>
-            </li>
-        </ul>
+                <li>
+                    <p>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.linkedin.com/in/ianrackson/"
+                        >
+                            <i id="linkedin" className="fab fa-linkedin"></i>
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://github.com/irackson/"
+                        >
+                            <i id="github" className="fab fa-github-square"></i>
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.youtube.com/channel/UChtYvxQVNWgsySzDJRcv6SQ"
+                        >
+                            <i
+                                id="github"
+                                className="fab fa-youtube-square"
+                            ></i>
+                        </a>
+                    </p>
+                </li>
+            </ul>
+        </div>
     );
 };
 

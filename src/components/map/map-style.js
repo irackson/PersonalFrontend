@@ -88,7 +88,7 @@ const mapStyles = [
         featureType: 'poi',
         stylers: [
             {
-                visibility: 'on',
+                visibility: 'off',
             },
         ],
     },
@@ -141,7 +141,7 @@ const mapStyles = [
         featureType: 'road',
         stylers: [
             {
-                visibility: 'off',
+                // visibility: 'off',
             },
         ],
     },

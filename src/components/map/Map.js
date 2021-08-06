@@ -20,21 +20,21 @@ const Map = (props) => {
                 center: location,
                 disableDefaultUI: true,
                 styles: mapStyle,
-                draggable: false,
+                // draggable: false,
                 keyboardShortcuts: false,
-                gestureHandling: 'none',
+                // gestureHandling: 'none',
                 clickableIcons: false,
                 fullscreenControl: false,
                 noClear: true,
                 streetViewControl: false,
-                zoomControl: false,
-                draggableCursor: '_, auto',
-                draggingCursor: '_, auto',
+                // zoomControl: false,
+                // draggableCursor: '_, auto',
+                // draggingCursor: '_, auto',
             });
             new window.google.maps.Marker({
                 position: location,
                 map: map,
-                clickable: false,
+                // clickable: true,
             });
         }
     }, [props.coordinates.lat, props.coordinates.lng, props.zoom]);

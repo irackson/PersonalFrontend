@@ -5,7 +5,15 @@ const Back = (props) => {
         <div className="back">
             <div></div>
             <div>
-                <MapLoader></MapLoader>
+                <div
+                    style={
+                        props.isFlipped
+                            ? { visibility: 'visible' }
+                            : { visibility: 'hidden', transitionDelay: '200ms' }
+                    }
+                >
+                    <MapLoader></MapLoader>
+                </div>
                 <section className="back__text-container">
                     <a href="tel:917-684-8443">(917) 684-8443</a>
                     <a href="mailto:ian@rackson.com">ian@rackson.com</a>
