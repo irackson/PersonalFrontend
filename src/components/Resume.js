@@ -17,6 +17,7 @@ const Resume = ({ docLink }) => {
                 <div
                     id="circle"
                     onClick={(e) => openResume(e)}
+                    onTouchMove={(e) => openResume(e)}
                     style={{ cursor: 'pointer' }}
                 >
                     <svg
