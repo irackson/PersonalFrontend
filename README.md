@@ -4,15 +4,6 @@
 
 ### TODO
 
-### icebucket
+### ice-bucket
 
--   radius of nav icons on mobile
--   theme selector always collapes, with current theme displayed
-
-### bugs
-
--   Map.js: "27[Violation] Added non-passive event listener to a scroll-blocking <some> event. Consider marking event handler as 'passive' to make the page more responsive. See [URL](https://www.chromestatus.com/feature/5745543795965952)"
--   MapLoader.js after flipping card a few times: "Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-    at MapLoader (<http://localhost:3000/static/js/main.chunk.js:2715:81>)
-    at div
-    at Back"
+-   add theme selector

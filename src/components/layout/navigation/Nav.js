@@ -14,14 +14,16 @@ const styledComponentNames = [
 const ActiveNavButton = styled.button`
     background: ${(props) => props.ActiveNavButton_props['background']};
     color: ${(props) => props.ActiveNavButton_props['color']};
-    /* border-radius: 50%; */
     @media only screen and (min-width: 789px) {
         width: 6ch;
         border-radius: 5%;
     }
 
     @media only screen and (max-width: 768px) {
-        border-radius: 50%;
+        margin: 0;
+        padding: 0.1rem 0.3rem 0.2rem 0.4rem;
+        width: min-content;
+        border-radius: 50% 40% 50% 30%;
     }
 `;
 const ActiveNavButton_props = {};
@@ -29,13 +31,15 @@ const ActiveNavButton_props = {};
 const InactiveNavButton = styled.button`
     background: ${(props) => props.InactiveNavButton_props['background']};
     color: ${(props) => props.InactiveNavButton_props['color']};
-    /* border-radius: 50%; */
     @media only screen and (min-width: 789px) {
         border-radius: 5%;
         width: 6ch;
     }
     @media only screen and (max-width: 768px) {
-        border-radius: 50%;
+        margin: 0;
+        padding: 0.1rem 0.3rem 0.2rem 0.4rem;
+        width: min-content;
+        border-radius: 50% 40% 50% 30%;
     }
 `;
 const InactiveNavButton_props = {};

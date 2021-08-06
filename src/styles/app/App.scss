@@ -569,6 +569,10 @@ input[type='email'] {
                 overflow: visible !important;
                 text-shadow: 2px 2px rgba(210, 226, 67, 0.548);
             }
+
+            @media only screen and (max-width: 768px) {
+                border-right: 70vw solid transparent;
+            }
         }
 
         #circle {
