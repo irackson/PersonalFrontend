@@ -159,7 +159,7 @@ input {
         justify-items: center;
         align-items: center;
         gap: 20px;
-        width: 33vw;
+        width: max(250px, 33vw);
 
         a {
             color: #6b6ace;
@@ -180,7 +180,7 @@ input {
     margin-right: auto;
     background-image: url('https://storage.jukeboxprint.com/s/images/stocks/cream-cotton-stock.jpg');
     text-align: center;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-top: 1rem;
 }
 
@@ -206,7 +206,19 @@ input {
     h3 {
         font-size: 24px;
     }
+
+    .avatar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35%;
+        margin-top: 10%;
+        #avatar {
+            width: 67%;
+        }
+    }
 }
+
 .back {
     width: 300px;
     height: 525px;
@@ -554,7 +566,6 @@ input[type='email'] {
     }
 
     &__resume-container {
-        padding-top: 3rem;
         display: flex;
         justify-items: center;
         align-items: center;
@@ -569,7 +580,9 @@ input[type='email'] {
                 overflow: visible !important;
                 text-shadow: 2px 2px rgba(210, 226, 67, 0.548);
             }
-
+        }
+        .mobile-resume-fix {
+            padding-top: 3rem;
             @media only screen and (max-width: 768px) {
                 border-right: 70vw solid transparent;
             }
@@ -577,10 +590,8 @@ input[type='email'] {
 
         #circle {
             position: relative;
-            // width: 100%;
             width: 80px;
             border-radius: 50%;
-            // padding-bottom: 100%;
             overflow: hidden;
         }
 

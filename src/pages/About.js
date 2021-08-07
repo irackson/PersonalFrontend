@@ -25,7 +25,7 @@ const About = (props) => {
     const loaded = () => {
         return (
             <Div className="about">
-                <Resume docLink={docLink}></Resume>
+                <Resume isAbout={true} docLink={docLink}></Resume>
                 {/* TODO: add skills section */}
                 {/* <div>skills</div> */}
                 <Faq className="about__faq">

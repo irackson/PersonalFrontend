@@ -1,4 +1,4 @@
-const Resume = ({ docLink }) => {
+const Resume = ({ docLink, isAbout }) => {
     const openResume = (e) => {
         e.preventDefault();
 
@@ -13,7 +13,10 @@ const Resume = ({ docLink }) => {
     };
     return (
         <div className="about__resume-container">
-            <div id="container">
+            <div
+                id="container"
+                className={isAbout ? 'mobile-resume-fix' : null}
+            >
                 {/* https://codepen.io/mattsrinc/pen/OXwKkv */}
                 <div
                     id="circle"
