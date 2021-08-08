@@ -1,7 +1,23 @@
 {
     "short_name": "IAN RACKSON",
     "name": "IAN RACKSON WEB DEV",
-    "icons": [],
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "60x60 28x28 20x20 12x12",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "logo310.png",
+            "type": "image/png",
+            "sizes": "310x310"
+        }
+    ],
     "start_url": ".",
     "display": "standalone"
 }
