@@ -575,7 +575,7 @@ input[type='email'] {
             margin: 0%;
             :hover {
                 overflow: visible !important;
-                text-shadow: 2px 2px rgba(210, 226, 67, 0.548);
+                text-shadow: 1px 1px rgba(63, 211, 186, 0.767);
                 zoom: 150%;
                 // margin-top: -17.5%;
             }
@@ -599,7 +599,6 @@ input[type='email'] {
             font-size: 3.5rem;
             font-weight: bold;
             user-select: none;
-            text-decoration: overline;
         }
 
         #circle svg {
