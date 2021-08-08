@@ -161,14 +161,17 @@ input {
         gap: 20px;
         width: max(250px, 33vw);
 
-        a {
+        svg {
             color: #6b6ace;
             line-height: 0;
+            width: 1.5rem;
+            height: 1.5rem;
         }
 
-        a:hover {
+        svg:hover {
             color: rgb(219, 114, 102);
-            font-size: 2.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
         }
     }
 }
