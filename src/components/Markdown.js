@@ -29,6 +29,7 @@ const MarkdownCode = styled.div`
         color: ${(props) => props.MarkdownCode_props['color']};
         background: ${(props) => props.MarkdownCode_props['background']};
         /* flex-direction: row-reverse !important; */
+        padding: 0 !important;
     }
 `;
 const MarkdownCode_props = {};

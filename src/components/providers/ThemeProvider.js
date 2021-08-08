@@ -14,10 +14,11 @@ const ThemeContext = createContext(themeSeed);
 
 const ThemeProvider = (props) => {
     //* style context & reducer stuff
-    const [styleState, styleDispatch] = useReducer(
-        styleReducer,
-        useContext(StyleContext)
-    );
+    // const [styleState, styleDispatch] = useReducer(
+    //     styleReducer,
+    //     useContext(StyleContext)
+    // );
+    const styleDispatch = useReducer(styleReducer, useContext(StyleContext))[1]; //?
 
     const updateStyleFromForm = (formData) => {
         // console.log('before', formData);

@@ -1,13 +1,12 @@
-import { StyleContext } from 'components/providers/ThemeProvider';
+// import { StyleContext } from 'components/providers/ThemeProvider';
 import ThemeCustomizer from 'components/user/ThemeCustomizer';
-import { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Settings(props) {
     useEffect(() => {
         document.title = 'Ian Rackson | Theme';
     }, []);
-    const { styles, themes, updateThemeSelection } = useContext(StyleContext);
+    // const { styles, themes, updateThemeSelection } = useContext(StyleContext);
     return (
         <>
             <h2>Customize your Own Theme!</h2>{' '}

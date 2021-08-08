@@ -1,7 +1,7 @@
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 import Markdown from 'components/Markdown';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const BlogArticle = (props) => {
     const setDocumentTitle = () => {

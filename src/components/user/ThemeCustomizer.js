@@ -1,7 +1,7 @@
 import { StyleContext } from 'components/providers/ThemeProvider';
 
-import { useState, useEffect, useContext, useRef, Component } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useState, useContext, useRef } from 'react';
+import { useForm } from 'react-hook-form';
 
 import styled from 'styled-components';
 const { validate } = require('csstree-validator');
@@ -34,21 +34,20 @@ function ThemeCustomizer(props) {
     const [newProp, setNewProp] = useState({ ...newPropInterface });
     const {
         register: new_register,
-        handleSubmit: new_handleSubmit,
+        // handleSubmit: new_handleSubmit,
         watch: new_watch,
         reset,
     } = useForm();
 
-    const { styles, updateStyleFromForm, themes, updateThemeSelection } =
-        useContext(StyleContext);
+    const { styles, updateStyleFromForm } = useContext(StyleContext);
     const {
         register,
         handleSubmit,
-        control,
+        // control,
         watch,
-        reset: formReset,
-        setError,
-        formState: { errors },
+        // reset: formReset,
+        // setError,
+        // formState: { errors },
         // formState: { errors },
     } = useForm();
 

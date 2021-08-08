@@ -1,24 +1,22 @@
 import 'styles/vendors/GitCalStyle.css';
 import useWindowDimensions from 'utils/window-size';
 import GitHubCalendar from 'github-calendar';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 const Metrics = (props) => {
     useEffect(() => {
         document.title = 'Ian Rackson | Metrics';
     }, []);
 
-    const [cal, setCal] = useState(null);
     const { height, width } = useWindowDimensions();
 
     const getCal = () => {
-        const calendar = GitHubCalendar('.calendar', 'irackson', {
-            summary_text:
-                'Summary of my Github pull requests, issues opened, and commits',
+        GitHubCalendar('.calendar', 'irackson', {
+            // // summary_text:
+            //     'Summary of my Github pull requests, issues opened, and commits',
             responsive: true,
             tooltips: true,
         });
-        setCal(calendar);
     };
 
     useEffect(() => {
