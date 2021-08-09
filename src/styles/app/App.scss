@@ -691,3 +691,11 @@ input[type='email'] {
         height: 100%;
     }
 }
+
+#calendly-button {
+    white-space: nowrap;
+    min-width: fit-content;
+    width: 12ch;
+    border-radius: 2px;
+    background-color: orange;
+}
