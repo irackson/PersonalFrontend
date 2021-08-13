@@ -61,7 +61,9 @@ function Footer() {
                         processSubscription={processSubscription}
                     ></Subscribe>
                 ) : (
-                    <h4>Thank you for subscribing!</h4>
+                    <div className="post-subscript">
+                        <h4>Thank you for subscribing!</h4>
+                    </div>
                 )}
                 <ThemeApplicator></ThemeApplicator>
                 <Social></Social>

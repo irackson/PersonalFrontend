@@ -51,6 +51,8 @@ const Back = (props) => {
                             : { visibility: 'hidden', transitionDelay: '160ms' }
                     }
                 >
+                    {/* add location string as prop, or don't for dev's coordinates */}
+                    {/* <MapLoader location="New York City"></MapLoader> */}
                     <MapLoader></MapLoader>
                 </div>
                 <section className="back__text-container">

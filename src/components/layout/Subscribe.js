@@ -45,25 +45,31 @@ const Subscribe = (props) => {
                 <div className="subscribe-checkboxes">
                     {!props.subState.projects ? (
                         <div>
-                            <label htmlFor="projects">apps</label>
-                            <input
-                                type="checkbox"
-                                name="projects"
-                                checked={subForm.projects}
-                                onChange={handleChange}
-                            ></input>
+                            <label htmlFor="projects">
+                                apps
+                                <input
+                                    type="checkbox"
+                                    name="projects"
+                                    aria-labelledby="projects"
+                                    checked={subForm.projects}
+                                    onChange={handleChange}
+                                ></input>
+                            </label>
                             <span></span>
                         </div>
                     ) : null}
                     {!props.subState.blog ? (
                         <div>
-                            <label htmlFor="blog">blogs</label>
-                            <input
-                                type="checkbox"
-                                name="blog"
-                                checked={subForm.blog}
-                                onChange={handleChange}
-                            ></input>
+                            <label htmlFor="blog">
+                                blogs
+                                <input
+                                    type="checkbox"
+                                    name="blog"
+                                    aria-labelledby="blog"
+                                    checked={subForm.blog}
+                                    onChange={handleChange}
+                                ></input>
+                            </label>
                             <span></span>
                         </div>
                     ) : null}

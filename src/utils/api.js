@@ -129,7 +129,6 @@ export const doSubscribe = async (subscription) => {
         projects: "on" | null,
         blog: "on" | null,
     } */
-    console.log('do', subscription);
     const response = await fetch(`https://api.ianrackson.com/users/subscribe`, {
         method: 'POST',
         headers: {

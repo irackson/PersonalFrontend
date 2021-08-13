@@ -11,10 +11,10 @@ const MapLoader = (props) => {
     };
 
     useEffect(() => {
-        // setCoor(getCoor(props.location));
-        setCoor(getCoor());
-        // }, [props.location]);
-    }, []);
+        setCoor(getCoor(props.location));
+        // setCoor(getCoor());
+    }, [props.location]);
+    // }, []);
 
     const loaded = () => {
         return <Map coordinates={coor} zoom={12.15}></Map>;
