@@ -174,7 +174,7 @@ const Nav = (props) => {
                             }`}
                             key={p.dir}
                         >
-                            <Link to={p.dir}>
+                            <Link to={p.dir} aria-label={p.name}>
                                 {isCurrentPage(p.dir) ? (
                                     <ActiveNavButton
                                         ActiveNavButton_props={

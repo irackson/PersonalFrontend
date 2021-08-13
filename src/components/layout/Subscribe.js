@@ -50,7 +50,7 @@ const Subscribe = (props) => {
                                 <input
                                     type="checkbox"
                                     name="projects"
-                                    aria-labelledby="projects"
+                                    aria-label="project subscribe"
                                     checked={subForm.projects}
                                     onChange={handleChange}
                                 ></input>
@@ -65,7 +65,7 @@ const Subscribe = (props) => {
                                 <input
                                     type="checkbox"
                                     name="blog"
-                                    aria-labelledby="blog"
+                                    aria-label="blog subscribe"
                                     checked={subForm.blog}
                                     onChange={handleChange}
                                 ></input>

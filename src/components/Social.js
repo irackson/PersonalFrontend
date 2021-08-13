@@ -31,6 +31,7 @@ const Social = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://www.linkedin.com/in/ianrackson/"
+                            aria-label="LinkedIn"
                         >
                             {/* <i id="linkedin" className="fab fa-linkedin"></i> */}
                             <svg
@@ -57,6 +58,7 @@ const Social = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://github.com/irackson/"
+                            aria-label="GitHub"
                         >
                             {/* <i id="github" className="fab fa-github-square"></i> */}
                             <svg
@@ -83,6 +85,7 @@ const Social = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://www.youtube.com/channel/UChtYvxQVNWgsySzDJRcv6SQ"
+                            aria-label="YouTube"
                         >
                             {/* <i
                                 id="youtube"
