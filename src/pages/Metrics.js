@@ -3,7 +3,7 @@ import useWindowDimensions from 'utils/window-size';
 import GitHubCalendar from 'github-calendar';
 import { useEffect } from 'react';
 
-const Metrics = (props) => {
+const Metrics = () => {
     useEffect(() => {
         document.title = 'Ian Rackson | Metrics';
     }, []);

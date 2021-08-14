@@ -247,6 +247,18 @@ input {
         border-radius: 2px;
         background-color: #f5f5f5;
     }
+
+    .toggle-button {
+        border-radius: 2px;
+        cursor: default;
+        &:hover,
+        &:active {
+            cursor: default;
+        }
+        &:active {
+            background-color: #f5f5f583;
+        }
+    }
 }
 
 .slider-container {
@@ -288,6 +300,7 @@ input {
 
 .calendar {
     padding: 1rem;
+    padding-top: 8vh;
     font-size: clamp(1rem, 5vw, 2rem);
 }
 
@@ -589,7 +602,7 @@ input[type='email'] {
             :hover {
                 overflow: visible !important;
                 text-shadow: 1px 1px rgba(63, 211, 186, 0.767);
-                zoom: 150%;
+                zoom: 125%;
                 // margin-top: -17.5%;
             }
         }
@@ -704,4 +717,8 @@ input[type='email'] {
     width: 12ch;
     border-radius: 2px;
     background-color: orange;
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
 }

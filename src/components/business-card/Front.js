@@ -33,7 +33,7 @@ const Front = (props) => {
             </div>
 
             <button
-                className="btn draw-border"
+                className="btn draw-border toggle-button"
                 onClick={(e) => props.toggleCard(e)}
             >
                 Contact Info

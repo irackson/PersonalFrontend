@@ -75,10 +75,10 @@ const Back = (props) => {
                 </section>
             </div>
             <button
-                className="btn draw-border"
+                className="btn draw-border toggle-button"
                 onClick={(e) => props.toggleCard(e)}
             >
-                Flip Back
+                Flip Card
             </button>
         </div>
     );
