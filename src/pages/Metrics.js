@@ -34,7 +34,7 @@ const Metrics = () => {
                     <embed
                         width={Math.floor(width * (80 / 100))}
                         height={Math.floor(height * (60 / 100))}
-                        src="https://wakatime.com/share/@4c81cb27-377a-401f-b22b-0f0921763ea1/192f8a18-8f63-40c4-b7df-7afb3945b376.svg"
+                        src="https://wakatime.com/share/@irackson/c91e9ad1-08d9-4b88-9051-2ac6343a5740.svg"
                         title="coding activity graph"
                     />
                 </figure>
@@ -42,7 +42,7 @@ const Metrics = () => {
                     <embed
                         width={Math.floor(width * (80 / 100))}
                         height={Math.floor(height * (60 / 100))}
-                        src="https://wakatime.com/share/@4c81cb27-377a-401f-b22b-0f0921763ea1/24573ca6-65ed-4336-bc5d-886b2e845097.svg"
+                        src="https://wakatime.com/share/@irackson/aaecfd27-6cb3-4a56-9490-b8e0ad12c335.svg"
                         title="language (time spent)"
                     />
                 </figure>
