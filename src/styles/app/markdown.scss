@@ -163,7 +163,7 @@
     /* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
 
     p,
-    *:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p):not(a) {
+    *:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p):not(a):not(em):not(code):not(strong) {
         // margin: 1rem auto 1rem;
         // max-width: 36rem;
         padding-left: 0.5rem;
