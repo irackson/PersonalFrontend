@@ -1,42 +1,34 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useEffect } from 'react';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const SliderCard = styled.div`
-    /* display: flex; */
     position: relative;
-    /* border: 1px solid magenta; */
-    min-height: 400px;
-    width: 100%;
-    max-width: 50ch;
-    text-align: center !important;
-    text-overflow: ellipsis !important;
-    overflow: visible !important;
+    max-width: 60ch;
 
     img {
         margin: auto;
         padding-left: 10px;
         padding-right: 10px;
         max-height: 200px;
-        /* width: 25%; */
-        /* height: 60%; */
+    }
+
+    div.title {
+        font-size: 28px;
+        font-weight: bolder;
+        margin-bottom: 15px;
     }
 
     div.description {
-        position: absolute;
         padding-top: 20px;
         padding-left: 10px;
         padding-right: 10px;
-        /* overflow: visible !important; */
-        /* bottom: 0; */
-        /* height: 100px; */
         width: 100%;
         display: flex;
         justify-content: center;
-        /* align-items: center; */
+        font-size: 18px;
+        font-weight: bold;
     }
 `;
 
@@ -98,11 +90,11 @@ const Blog = (props) => {
                         {props.blogs.map((blog, i) => (
                             <SliderCard key={i}>
                                 <Link to={`/blog/${blog.slug}`}>
-                                    <h3>{blog.title}</h3>
+                                    <div className="title">{blog.title}</div>
                                 </Link>
                                 <img src={blog.thumbnail} alt={blog.slug} />
                                 <div className="description">
-                                    <h4>{blog.description}</h4>
+                                    {blog.description}
                                 </div>
                             </SliderCard>
                         ))}
