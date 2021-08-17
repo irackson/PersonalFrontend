@@ -86,9 +86,9 @@ const Nav = (props) => {
     }
 
     const history = useHistory(null);
-    const [currentPage, setCurrentPage] = useState(history.location.pathname);
 
     const isCurrentPage = (page) => {
+        const currentPage = history.location.pathname;
         let style = null;
         if (currentPage.match(`${page}`)) {
             style = true;
@@ -116,13 +116,9 @@ const Nav = (props) => {
             if (history.action === 'POP') {
                 if (locationKeys[1] === location.key) {
                     setLocationKeys(([_, ...keys]) => keys);
-                    setCurrentPage(history.location.pathname);
-
                     // Handle forward event
                 } else {
                     setLocationKeys((keys) => [location.key, ...keys]);
-
-                    setCurrentPage(history.location.pathname);
                     // Handle back event
                 }
             }
@@ -180,7 +176,6 @@ const Nav = (props) => {
                                         ActiveNavButton_props={
                                             ActiveNavButton_props
                                         }
-                                        onClick={() => setCurrentPage(p.dir)}
                                     >
                                         <i
                                             className={`${p.className} material-icons`}
@@ -192,7 +187,6 @@ const Nav = (props) => {
                                         InactiveNavButton_props={
                                             InactiveNavButton_props
                                         }
-                                        onClick={() => setCurrentPage(p.dir)}
                                     >
                                         <i
                                             className={`${p.className} material-icons`}
