@@ -62,15 +62,14 @@ $level-size: $type-base-size;
     // Assign to element and create utility class
     h#{$level},
     .h#{$level} {
+        // Set with `em` to be relative to current `font-size`
+        margin-bottom: 0.65em;
         // Fallback for browsers that don't support min / max
         font-size: $level-size;
 
         // Recommendation courtesy of this brilliant work:
         // @link https://hugogiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
         line-height: calc(2px + 2ex + 2px);
-
-        // Set with `em` to be relative to current `font-size`
-        margin-bottom: 0.65em;
 
         // Limit in place based on testing -> smaller ratios are
         // prematurely or unnecessarily reduced
@@ -120,14 +119,13 @@ h1,
 h2,
 h3,
 h4 {
-    // Help prevent overflow of long words/names/URLs
-    word-break: break-word;
+    // Clear top margin
+    margin-top: 0;
 
     // Optional, not supported for all languages:
     hyphens: auto;
-
-    // Clear top margin
-    margin-top: 0;
+    // Help prevent overflow of long words/names/URLs
+    word-break: break-word;
 }
 
 body {
@@ -146,54 +144,52 @@ input {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 5vmax;
     margin-bottom: 5px;
-
+    height: 5vmax;
     &__list {
-        list-style: none;
-        padding: 0;
         display: inline-grid;
-        grid-auto-rows: max-content;
-        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
-        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: max-content;
         align-items: center;
+        justify-items: center;
         gap: 20px;
+        padding: 0;
         width: max(250px, 33vw);
-
+        list-style: none;
         svg {
-            color: #6b6ace;
-            line-height: 0;
             width: 1.5rem;
             height: 1.5rem;
+            color: #6b6ace;
+            line-height: 0;
         }
 
         svg:hover {
-            color: rgb(219, 114, 102);
             width: 2.5rem;
             height: 2.5rem;
+            color: rgb(219, 114, 102);
         }
     }
 }
 
 .business__container {
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 6px;
     width: 300px;
     height: 525px;
-    margin-left: auto;
-    margin-right: auto;
     // background-image: url('https://ianrackson.com/assets/card-background.jpg');
     text-align: center;
-    border-radius: 6px;
-    margin-top: 1rem;
 }
 
 .front__container {
-    width: 300px;
-    height: 525px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 300px;
+    height: 525px;
 
     h2 {
         font-size: 36px;
@@ -207,8 +203,8 @@ input {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 35%;
         margin-top: 10%;
+        height: 35%;
         #avatar {
             width: 67%;
         }
@@ -216,20 +212,20 @@ input {
 }
 
 .back {
-    width: 300px;
-    height: 525px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 300px;
+    height: 525px;
 
     &__text-container {
-        padding-top: 1rem;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         gap: 1rem;
+        padding-top: 1rem;
         font-weight: bold;
         a {
             color: currentColor;
@@ -241,16 +237,16 @@ input {
 .back {
     button {
         margin-bottom: 1rem;
-        white-space: nowrap;
-        min-width: fit-content;
-        width: 12ch;
         border-radius: 2px;
         background-color: #f5f5f5;
+        width: 12ch;
+        min-width: fit-content;
+        white-space: nowrap;
     }
 
     .toggle-button {
-        border-radius: 2px;
         cursor: default;
+        border-radius: 2px;
         &:hover,
         &:active {
             cursor: default;
@@ -270,8 +266,8 @@ input {
 }
 
 .slider {
-    width: 100%;
     position: relative;
+    width: 100%;
     text-align: center;
 }
 .slick-next:before,
@@ -282,12 +278,12 @@ input {
 .wakatime {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    gap: 4rem;
     padding-top: clamp(15px, 60px, 4rem);
     padding-bottom: clamp(8px, 30px, 2rem);
-    gap: 4rem;
-    flex-wrap: nowrap;
     figure {
         margin-top: -20px;
         margin-bottom: -20px;
@@ -306,75 +302,77 @@ input {
 
 .home {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
     align-content: center;
     justify-content: center;
-    margin-top: 10vh;
-    margin-left: 10%;
-    margin-right: 10%;
     gap: 8px;
+    margin-top: 10vh;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
 
     .featured-project {
-        grid-column-start: 1;
-        grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
-        width: 30ch;
+        grid-column-start: 1;
+        grid-column-end: 2;
         margin: auto;
+        width: 30ch;
     }
 
     .business-card {
-        grid-column-start: 2;
-        grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
     }
 
     .featured-blog {
-        grid-column-start: 3;
-        grid-column-end: 4;
         grid-row-start: 1;
         grid-row-end: 2;
-        width: 30ch;
+        grid-column-start: 3;
+        grid-column-end: 4;
         margin: auto;
+        width: 30ch;
     }
+}
 
+.home {
     @media (max-width: 926px) {
-        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         margin-top: 4vh;
         .featured-project {
-            grid-column-start: 1;
-            grid-column-end: 2;
             grid-row-start: 2;
             grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
             margin-bottom: -20px;
         }
 
         .business-card {
-            grid-column-start: 1;
-            grid-column-end: 2;
             grid-row-start: 1;
             grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
         }
 
         .featured-blog {
-            grid-column-start: 1;
-            grid-column-end: 2;
             grid-row-start: 3;
             grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 2;
         }
     }
 }
 
 .subscribe-container,
 .post-subscript {
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     text-align: center;
 
     .subscribe-checkboxes {
@@ -391,22 +389,22 @@ input {
 // }
 
 input {
-    border: 1px solid white;
+    margin: 0 0 10px 0;
     -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
         0 0 16px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
         0 0 16px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
-    padding: 0.25rem;
-    background: rgba(255, 255, 255, 0.5);
-    margin: 0 0 10px 0;
+    border: 1px solid white;
     border-radius: 20%;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.25rem;
 }
 
 input[type='checkbox'] {
-    margin: -1px 0px 0 10px;
     vertical-align: middle;
     cursor: pointer;
+    margin: -1px 0px 0 10px;
     width: 20px;
     height: 20px;
 }
@@ -428,20 +426,20 @@ input[type='email'] {
     $horizontal: left,
     $duration: 0.25s
 ) {
+    position: relative;
+    transition: color $duration math.div($duration, 3);
     box-shadow: inset 0 0 0 $width $color;
     color: $color;
-    transition: color $duration math.div($duration, 3);
-    position: relative;
 
     &::before,
     &::after {
-        border: 0 solid transparent;
-        box-sizing: border-box;
-        content: '';
-        pointer-events: none;
         position: absolute;
+        box-sizing: border-box;
+        border: 0 solid transparent;
         width: 0;
         height: 0;
+        pointer-events: none;
+        content: '';
 
         #{$vertical}: 0;
         #{$horizontal}: 0;
@@ -466,8 +464,8 @@ input[type='email'] {
 
         &::before,
         &::after {
-            border-color: $hover;
             transition: border-color 0s, width $duration, height $duration;
+            border-color: $hover;
             width: 100%;
             height: 100%;
         }
@@ -488,8 +486,8 @@ input[type='email'] {
 
 .btn {
     cursor: pointer;
-    letter-spacing: 0.05rem;
     border: 0px solid white;
+    letter-spacing: 0.05rem;
 }
 //=== End Button styling
 
@@ -499,14 +497,14 @@ input[type='email'] {
     justify-content: center;
     align-items: center;
     @media (min-width: 769px) {
-        max-width: 80vw !important;
         margin: 0 auto;
         margin-top: 2rem;
+        max-width: 80vw !important;
     }
 
     @media (max-width: 769px) {
-        padding-top: 60px;
         flex-wrap: wrap;
+        padding-top: 60px;
 
         > * {
             padding-right: 4px;
@@ -522,12 +520,12 @@ input[type='email'] {
     }
 
     &__heading {
-        text-align: center;
+        padding-right: 1rem;
         padding-bottom: 3rem;
 
         padding-left: 0.5rem;
-        padding-right: 1rem;
         hyphens: none !important;
+        text-align: center;
         .article__description {
             font-style: italic;
         }
@@ -538,20 +536,19 @@ input[type='email'] {
     }
 
     &__links {
-        margin-top: 0.5rem;
-
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 0.5rem;
         p {
             margin-top: 2rem;
-            line-height: 0.2;
             font-size: 1.5rem;
+            line-height: 0.2;
         }
         img {
+            margin: 0 auto;
             // width: clamp(300px, 30vw, 800px);
             max-height: 400px;
-            margin: 0 auto;
         }
     }
 
@@ -563,9 +560,9 @@ input[type='email'] {
 .about {
     &__faq {
         h2 {
-            text-decoration: underline;
             padding-bottom: 0.5rem;
             text-align: center;
+            text-decoration: underline;
         }
 
         h3 {
@@ -574,14 +571,14 @@ input[type='email'] {
 
         h4 {
             display: flex;
+            row-gap: 1rem;
             flex-direction: column;
             white-space: pre-line;
-            row-gap: 1rem;
         }
 
         p {
-            text-indent: 2rem;
             line-height: 1.75rem;
+            text-indent: 2rem;
         }
     }
 
@@ -591,68 +588,8 @@ input[type='email'] {
 
     &__resume-container {
         display: flex;
-        justify-items: center;
         align-items: center;
-
-        a {
-            color: currentColor;
-        }
-
-        #container {
-            margin: 0%;
-            :hover {
-                overflow: visible !important;
-                text-shadow: 1px 1px rgba(63, 211, 186, 0.767);
-                zoom: 125%;
-                // margin-top: -17.5%;
-            }
-        }
-        .mobile-resume-fix {
-            padding-top: 3rem;
-            @media only screen and (max-width: 768px) {
-                border-right: 70vw solid transparent;
-            }
-        }
-
-        #circle {
-            position: relative;
-            width: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        #circle text {
-            font-family: 'Helvetica Neue', Arial;
-            font-size: 3.5rem;
-            font-weight: bold;
-            user-select: none;
-        }
-
-        #circle svg {
-            width: 100%;
-            height: 60px;
-
-            -webkit-animation-name: rotate;
-            -moz-animation-name: rotate;
-            -ms-animation-name: rotate;
-            -o-animation-name: rotate;
-            animation-name: rotate;
-            -webkit-animation-duration: 5s;
-            -moz-animation-duration: 5s;
-            -ms-animation-duration: 5s;
-            -o-animation-duration: 5s;
-            animation-duration: 5s;
-            -webkit-animation-iteration-count: infinite;
-            -moz-animation-iteration-count: infinite;
-            -ms-animation-iteration-count: infinite;
-            -o-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-            -webkit-animation-timing-function: linear;
-            -moz-animation-timing-function: linear;
-            -ms-animation-timing-function: linear;
-            -o-animation-timing-function: linear;
-            animation-timing-function: linear;
-        }
+        justify-items: center;
 
         @-webkit-keyframes rotate {
             from {
@@ -694,14 +631,74 @@ input[type='email'] {
                 transform: rotate(0);
             }
         }
+
+        a {
+            color: currentColor;
+        }
+
+        #container {
+            margin: 0%;
+            :hover {
+                overflow: visible !important;
+                text-shadow: 1px 1px rgba(63, 211, 186, 0.767);
+                zoom: 125%;
+                // margin-top: -17.5%;
+            }
+        }
+        .mobile-resume-fix {
+            padding-top: 3rem;
+            @media only screen and (max-width: 768px) {
+                border-right: 70vw solid transparent;
+            }
+        }
+
+        #circle {
+            position: relative;
+            border-radius: 50%;
+            width: 80px;
+            overflow: hidden;
+        }
+
+        #circle text {
+            font-weight: bold;
+            font-size: 3.5rem;
+            font-family: 'Helvetica Neue', Arial;
+            user-select: none;
+        }
+
+        #circle svg {
+            -webkit-animation-duration: 5s;
+            -moz-animation-duration: 5s;
+            -ms-animation-duration: 5s;
+            -o-animation-duration: 5s;
+            animation-duration: 5s;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+            -ms-animation-timing-function: linear;
+            -o-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+
+            -webkit-animation-name: rotate;
+            -moz-animation-name: rotate;
+            -ms-animation-name: rotate;
+            -o-animation-name: rotate;
+            animation-name: rotate;
+            width: 100%;
+            height: 60px;
+        }
     }
 }
 
 .iframe-container {
     position: relative;
+    padding-bottom: 56.25%;
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%;
 
     iframe {
         position: absolute;
@@ -713,12 +710,12 @@ input[type='email'] {
 }
 
 #calendly-button {
-    white-space: nowrap;
-    min-width: fit-content;
-    width: 12ch;
+    cursor: grab;
     border-radius: 2px;
     background-color: orange;
-    cursor: grab;
+    width: 12ch;
+    min-width: fit-content;
+    white-space: nowrap;
     &:active {
         cursor: grabbing;
     }

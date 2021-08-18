@@ -22,9 +22,9 @@ $circle-nav-item-bg: #fff;
     $show-text: false;
     .circle-nav-wrapper {
         position: absolute;
-        z-index: 9999999;
-        right: 0px;
         top: 0px;
+        right: 0px;
+        z-index: 9999999;
         width: math.div($circle-nav-panel-width, 2);
         height: math.div($circle-nav-panel-height, 2);
         overflow: hidden;
@@ -33,19 +33,19 @@ $circle-nav-item-bg: #fff;
 
         // Toggle button
         .circle-nav-toggle {
-            position: absolute;
-            user-select: none;
             display: flex;
-            align-items: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
             justify-content: center;
-            border-radius: 50%;
+            align-items: center;
             z-index: 999999;
+            transition: transform 0.2s cubic-bezier(0, 1.16, 1, 1);
+            border: 2px solid $circle-nav-toggle-color;
+            border-radius: 50%;
             width: $circle-nav-toggle-weight;
             height: $circle-nav-toggle-height;
-            border: 2px solid $circle-nav-toggle-color;
-            transition: transform 0.2s cubic-bezier(0, 1.16, 1, 1);
-            right: 10px;
-            top: 10px;
+            user-select: none;
 
             i.material-icons {
                 color: $circle-nav-toggle-color;
@@ -58,8 +58,8 @@ $circle-nav-item-bg: #fff;
 
             // Navigation open
             &.circle-nav-open {
-                border: 2px solid maroon;
                 transform: rotate(135deg);
+                border: 2px solid maroon;
 
                 i.material-icons {
                     color: #fff;
@@ -69,6 +69,10 @@ $circle-nav-item-bg: #fff;
 
         // Background panel
         .circle-nav-panel {
+            transform: translate(-50%, -52.5%);
+            transition: width 0.2s $cubic-bezier, height 0.2s $cubic-bezier;
+            margin-left: math.div($circle-nav-panel-width, 2) + 12; // 12 to avoid cropping the shadow
+            border-radius: 50%;
             // background: linear-gradient(
             //     to right,
             //     $circle-nav-panel-gradient-top,
@@ -76,17 +80,13 @@ $circle-nav-item-bg: #fff;
             // );
             width: 0;
             height: 0;
-            border-radius: 50%;
-            transform: translate(-50%, -52.5%);
-            transition: width 0.2s $cubic-bezier, height 0.2s $cubic-bezier;
-            margin-left: math.div($circle-nav-panel-width, 2) + 12; // 12 to avoid cropping the shadow
 
             // Navigation open
             &.circle-nav-open {
-                width: $circle-nav-panel-width;
-                height: $circle-nav-panel-height;
                 // opacity: 0.7;
                 box-shadow: -5px 6px 0 6px rgba(255, 95, 109, 0.33);
+                width: $circle-nav-panel-width;
+                height: $circle-nav-panel-height;
             }
         }
 
@@ -96,35 +96,19 @@ $circle-nav-item-bg: #fff;
             height: math.div($circle-nav-panel-height, 2);
 
             .circle-nav-item {
-                position: absolute;
                 display: flex;
+                position: absolute;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                background-color: transparent;
-                border-radius: 50%;
-                width: 15px;
-                height: 15px;
-                visibility: hidden;
                 transform: rotate(-115deg);
+                visibility: hidden;
                 transition: bottom 0.2s $cubic-bezier, left 0.2s $cubic-bezier,
                     width 0.2s $cubic-bezier, height 0.2s $cubic-bezier;
-
-                // Place the icons in the center of the panel before start transition
-                &-1,
-                &-2,
-                &-3,
-                &-4,
-                &-5 {
-                    left: math.div($circle-nav-panel-width, 2);
-                    bottom: math.div($circle-nav-panel-width, 2);
-                }
-
-                i {
-                    color: $circle-nav-panel-gradient-top;
-                    font-size: 0.1em;
-                    transition: all 1s $cubic-bezier;
-                }
+                border-radius: 50%;
+                background-color: transparent;
+                width: 15px;
+                height: 15px;
 
                 // Show icon?
                 @if $show-icon == true {
@@ -148,26 +132,42 @@ $circle-nav-item-bg: #fff;
                         display: none;
                     }
                 }
+
+                // Place the icons in the center of the panel before start transition
+                &-1,
+                &-2,
+                &-3,
+                &-4,
+                &-5 {
+                    bottom: math.div($circle-nav-panel-width, 2);
+                    left: math.div($circle-nav-panel-width, 2);
+                }
+
+                i {
+                    transition: all 1s $cubic-bezier;
+                    color: $circle-nav-panel-gradient-top;
+                    font-size: 0.1em;
+                }
             }
 
             &.circle-nav-open {
                 .circle-nav-item {
-                    width: 40px;
-                    height: 40px;
-                    visibility: visible;
                     transform: rotate(0deg);
+                    visibility: visible;
                     transition: bottom 0.3s $cubic-bezier,
                         left 0.3s $cubic-bezier, width 0.5s $cubic-bezier,
                         height 0.5s $cubic-bezier, transform 0.8s $cubic-bezier;
+                    width: 40px;
+                    height: 40px;
 
                     &:hover {
-                        cursor: pointer;
                         opacity: 0.8;
+                        cursor: pointer;
                     }
 
                     i {
-                        font-size: 1.3em;
                         transition: all 1s $cubic-bezier;
+                        font-size: 1.3em;
                     }
 
                     &.circle-nav-item-1 {
@@ -227,10 +227,10 @@ $circle-nav-item-bg: #fff;
         }
 
         .circle-nav-panel {
+            box-shadow: none;
             width: auto;
             max-width: auto;
             height: auto;
-            box-shadow: none;
         }
         ul.circle-nav-menu {
             margin-top: 1rem;
@@ -238,19 +238,19 @@ $circle-nav-item-bg: #fff;
             padding-left: 0;
         }
         .circle-nav-menu {
+            display: flex;
+            justify-content: space-around;
+            margin-right: auto;
+            margin-left: auto;
             width: $desktop-nav-width;
             max-width: 90vw;
             height: auto;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: space-around;
 
             .circle-nav-item {
                 position: relative;
                 visibility: visible;
-                color: #fff;
                 transition: color 0.2s ease-out;
+                color: #fff;
 
                 &:hover {
                     cursor: pointer;
@@ -262,14 +262,10 @@ $circle-nav-item-bg: #fff;
                 &-3,
                 &-4,
                 &-5 {
-                    left: auto;
-                    bottom: auto;
                     display: flex;
+                    bottom: auto;
+                    left: auto;
                     align-items: center;
-                    .material-icons {
-                        font-size: 1em;
-                        margin-right: 8px;
-                    }
 
                     // Show icon?
                     @if $show-icon == true {
@@ -293,6 +289,10 @@ $circle-nav-item-bg: #fff;
                         span {
                             display: none;
                         }
+                    }
+                    .material-icons {
+                        margin-right: 8px;
+                        font-size: 1em;
                     }
                 }
             }

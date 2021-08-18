@@ -49,8 +49,8 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -123,8 +123,8 @@ a {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(68, 68, 68, 1);
     border-radius: 0px;
+    background: rgba(68, 68, 68, 1);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
