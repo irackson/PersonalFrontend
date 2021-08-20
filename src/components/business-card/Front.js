@@ -18,7 +18,7 @@ const Front = (props) => {
                     <span className="front__rackson">RACKSON</span>
                 </h2>
                 <h3>
-                    <span className="front__fullstack">Full-Stack</span>{' '}
+                    <span className="front__fullstack">Full Stack</span>{' '}
                     <span className="front__webdev">Web Dev</span>
                 </h3>
             </div>
