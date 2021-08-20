@@ -41,6 +41,7 @@ const ThemeApplicator = (props) => {
     return (
         // TODO: Style theme applicator
         <nav style={{ display: 'none' }}>
+            {/* <nav> */}
             <ActiveThemeButton
                 ActiveThemeButton_props={ActiveThemeButton_props}
                 type="button"

@@ -197,7 +197,7 @@ function ThemeCustomizer(props) {
                             <fieldset name={file.path}>
                                 <legend>
                                     <a
-                                        href={`${gitPath}/${file.path}.js`}
+                                        href={`${gitPath}/${file.path}.jsx`}
                                         target="_"
                                     >
                                         {file.path}

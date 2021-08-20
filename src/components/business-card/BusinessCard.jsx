@@ -11,7 +11,6 @@ const BusinessCard = (props) => {
         e.preventDefault();
         setFlipToggle(!flipToggle);
     };
-
     return (
         <div className="business__container">
             {/* https://github.com/AaronCCWong/react-card-flip */}
