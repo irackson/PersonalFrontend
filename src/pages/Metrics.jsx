@@ -30,7 +30,8 @@ const Metrics = () => {
                 <div className="calendar"></div>
             </section>
             <section className="wakatime">
-                <figure>
+                {/* <figure> */}
+                <figure style={{ display: 'none' }}>
                     <embed
                         width={Math.floor(width * (80 / 100))}
                         height={Math.floor(height * (60 / 100))}
