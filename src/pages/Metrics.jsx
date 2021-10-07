@@ -29,13 +29,14 @@ const Metrics = () => {
             <section>
                 <div className="calendar"></div>
             </section>
+            {/* WAKATIME COLOR: #067526 */}
             <section className="wakatime">
-                {/* <figure> */}
-                <figure style={{ display: 'none' }}>
+                <figure>
+                    {/* <figure style={{ display: 'none' }}> */}
                     <embed
                         width={Math.floor(width * (80 / 100))}
                         height={Math.floor(height * (60 / 100))}
-                        src="https://wakatime.com/share/@irackson/c91e9ad1-08d9-4b88-9051-2ac6343a5740.svg"
+                        src="https://wakatime.com/share/@irackson/be93eb6f-c4dc-48b7-9c63-b67ddabdda73.svg"
                         title="coding activity graph"
                     />
                 </figure>
