@@ -31,8 +31,8 @@ const Metrics = () => {
             </section>
             {/* WAKATIME COLOR: #067526 */}
             <section className="wakatime">
-                <figure>
-                    {/* <figure style={{ display: 'none' }}> */}
+                {/* <figure> */}
+                <figure style={{ display: 'none' }}>
                     <embed
                         width={Math.floor(width * (80 / 100))}
                         height={Math.floor(height * (60 / 100))}
