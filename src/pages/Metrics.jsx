@@ -1,5 +1,5 @@
 //import GitHubCalendar from 'github-calendar';
-//import { useEffect } from 'react';
+import { useEffect } from 'react';
 //import 'styles/vendors/GitCalStyle.css';
 import useWindowDimensions from 'utils/window-size';
 
