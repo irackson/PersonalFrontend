@@ -10,6 +10,7 @@ import Metrics from 'pages/Metrics';
 import ProjectArticle from 'pages/ProjectArticle';
 import Projects from 'pages/Projects';
 import Settings from 'pages/Settings';
+import ResumeThankYou from 'pages/ResumeThankYou';
 import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { getAll } from 'utils/api';
@@ -106,7 +107,7 @@ export default function Main(props) {
                             path="/resume"
                             render={() => {
                                 window.location.href = resumeDownloadLink;
-                            return null;
+                                return <ResumeThankYou />;
                             }}
                         ></Route>
                         <Route
