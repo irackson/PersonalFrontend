@@ -107,7 +107,9 @@ export default function Main(props) {
                             path="/resume"
                             render={() => {
                                 window.location.href = resumeDownloadLink;
-                                return <ResumeThankYou />;
+                                return (
+                                  <ResumeThankYou isLoaded={true} />
+                                );
                             }}
                         ></Route>
                         <Route

@@ -9,11 +9,6 @@ const Div = styled.div`
   gap: 1.5rem;
 `;
 
-const Faq = styled.section`
-  max-width: 80ch;
-  padding: 1rem;
-`;
-
 const ResumeThankYouPage = (props) => {
   const loaded = () => {
     return <Div>Thank you for downloading my resume!</Div>;
