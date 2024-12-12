@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Div = styled.div`
   display: flex;
@@ -7,9 +8,14 @@ const Div = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 1.5rem;
+  padding-top: 40px;
 `;
 
 const ResumeThankYouPage = (props) => {
+  useEffect(() => {
+    document.title = 'Ian Rackson | Resume';
+  }, []);
+
   const loaded = () => {
     return <Div>Thank you for downloading my resume!</Div>;
   };
