@@ -13,6 +13,7 @@ import Settings from 'pages/Settings';
 import { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { getAll } from 'utils/api';
+import { resumeDownloadLink } from 'context/constants';
 
 export default function Main(props) {
     const [allData, setAllData] = useState({ isLoaded: false });
@@ -100,6 +101,13 @@ export default function Main(props) {
                                     isLoaded={allData.isLoaded}
                                 />
                             )}
+                        ></Route>
+                        <Route
+                            path="/resume"
+                            render={() => {
+                                window.location.href = resumeDownloadLink;
+                            return null;
+                            }}
                         ></Route>
                         <Route
                             path="/metrics"

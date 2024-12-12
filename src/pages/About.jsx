@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 // import { getAbout } from 'utils/api';
 import Resume from 'components/Resume';
+import { resumeDownloadLink } from 'context/constants';
 
 const Div = styled.div`
     display: flex;
@@ -17,16 +18,14 @@ const Faq = styled.section`
     padding: 1rem;
 `;
 
-const docLink =
-    'https://docs.google.com/document/d/1tz5miRPmyE0gqlwPsJqIqnnH8Y8QKbLkO_1dt4NHyAM/export?format=pdf';
-// const docLink = "https://github.com/irackson/PersonalBackend/raw/main/public/assets/resume/IanRackson-Resume.pdf"
+// const resumeDownloadLink = "https://github.com/irackson/PersonalBackend/raw/main/public/assets/resume/IanRackson-Resume.pdf"
 
 const About = (props) => {
     const loaded = () => {
         return (
             <Div className="about">
                 <div className="about__resume-wrapper">
-                    <Resume isAbout={true} docLink={docLink}></Resume>
+                    <Resume isAbout={true} docLink={resumeDownloadLink}></Resume>
                 </div>
                 {/* TODO: add skills section */}
                 {/* <div>skills</div> */}
