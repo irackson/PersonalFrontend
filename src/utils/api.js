@@ -1,4 +1,4 @@
-const apiRoute = process.env.REACT_APP_API_URL;
+const apiRoute = process.env.REACT_APP_API_URL || 'https://api.ianrackson.com';
 
 export const getAll = async () => {
     var myHeaders = new Headers();
@@ -129,7 +129,7 @@ export const doSubscribe = async (subscription) => {
         projects: "on" | null,
         blog: "on" | null,
     } */
-    const response = await fetch(`https://api.ianrackson.com/users/subscribe`, {
+    const response = await fetch(`${apiRoute}/users/subscribe`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
